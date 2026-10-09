@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>光遺傳學：一束藍光的接力</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;900&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: 單欄長文（約 68 字寬）＋寬版圖解卡穿插，頂部章節軌道；色彩取自三種光敏蛋白的激發光：藍 470 nm、琥珀 590 nm、葉綠素綠 */
+:root{
+  --bg:#F1F3F6; --surface:#FFFFFF; --ink:#132033; --ink2:#43516A; --ink3:#78849A; --line:#D5DBE4;
+  --blue:#2160D6; --blue-soft:#DCE7FB; --amber:#B97508; --amber-soft:#F7EAD2;
+  --algae:#357F43; --algae-soft:#DDEFDF; --red:#B83A27; --red-soft:#F6DDD8; --ok:#1E7552;
+  --display:"Noto Serif TC","Songti TC","Source Han Serif TC",Georgia,serif;
+  --sans:"Noto Sans TC","PingFang TC","Heiti TC","Microsoft JhengHei",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D131E; --surface:#151D2B; --ink:#E6EBF3; --ink2:#B2BCCB; --ink3:#8491A5; --line:#29344A;
+  --blue:#74A4FF; --blue-soft:#1A2A48; --amber:#F0AF48; --amber-soft:#3A2B11;
+  --algae:#6DC07B; --algae-soft:#16301C; --red:#F07B67; --red-soft:#3D1D18; --ok:#5CCB98; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D131E; --surface:#151D2B; --ink:#E6EBF3; --ink2:#B2BCCB; --ink3:#8491A5; --line:#29344A;
+  --blue:#74A4FF; --blue-soft:#1A2A48; --amber:#F0AF48; --amber-soft:#3A2B11;
+  --algae:#6DC07B; --algae-soft:#16301C; --red:#F07B67; --red-soft:#3D1D18; --ok:#5CCB98; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.85;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.prose{max-width:42em}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;line-height:1.3;margin:0}
+h2{font-size:clamp(26px,3.4vw,34px);font-weight:900}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+.flow>*+*{margin-top:1em}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+
+/* 章節軌道 */
+.rail{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.rail .wrap{display:flex;align-items:center;gap:14px;padding-block:8px}
+.brand{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink3);white-space:nowrap}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.chips::-webkit-scrollbar{display:none}
+.chips a{font-size:13px;text-decoration:none;color:var(--ink2);padding:3px 10px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.chips a.on{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
+.theme{font:12px var(--mono);background:none;border:1px solid var(--line);color:var(--ink2);border-radius:6px;padding:4px 8px;cursor:pointer}
+
+/* Hero */
+.hero{padding-block:48px 28px;display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:900;margin-top:10px;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lead{margin-top:18px;color:var(--ink2);font-size:18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:26px}
+.facts div{background:var(--surface);padding:12px 14px;min-width:0}
+.facts b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink3);font-weight:500}
+.facts span{font-size:15px;font-weight:500;font-variant-numeric:tabular-nums}
+
+section{padding-block:56px;border-top:1px solid var(--line)}
+.sec-head{display:flex;gap:14px;align-items:baseline;margin-bottom:22px}
+.sec-head .no{font-family:var(--mono);font-size:13px;color:var(--ink3);min-width:3.2em}
+
+/* 圖解卡 */
+figure{margin:30px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 18px 14px}
+figure svg{display:block;width:100%;height:auto}
+.figwrap{overflow-x:auto}
+.figwrap svg{min-width:560px}
+figcaption{font-size:14.5px;color:var(--ink2);margin-top:10px;line-height:1.7}
+figcaption b{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--blue);margin-right:6px;font-weight:600}
+svg text{font-family:var(--sans);fill:var(--ink)}
+svg .t2{fill:var(--ink2)} svg .t3{fill:var(--ink3)} svg .mono{font-family:var(--mono)}
+svg .tb{fill:var(--blue)} svg .ta{fill:var(--amber)} svg .tg{fill:var(--algae)} svg .tr{fill:var(--red)}
+.s-line{stroke:var(--line)} .s-ink{stroke:var(--ink2)} .s-blue{stroke:var(--blue)} .s-amber{stroke:var(--amber)} .s-algae{stroke:var(--algae)} .s-red{stroke:var(--red)}
+.f-surf{fill:var(--surface)} .f-bg{fill:var(--bg)} .f-line{fill:var(--line)} .f-blue{fill:var(--blue)} .f-bs{fill:var(--blue-soft)} .f-amber{fill:var(--amber)} .f-as{fill:var(--amber-soft)} .f-algae{fill:var(--algae)} .f-gs{fill:var(--algae-soft)} .f-red{fill:var(--red)} .f-rs{fill:var(--red-soft)} .f-ink3{fill:var(--ink3)} .f-none{fill:none}
+
+/* 關鍵字 */
+.kw{font-weight:700;color:var(--ink);background:linear-gradient(transparent 62%,var(--blue-soft) 62%);cursor:help;border:0;padding:0;font:inherit;font-weight:700}
+.kw.a{background:linear-gradient(transparent 62%,var(--amber-soft) 62%)}
+.kw.g{background:linear-gradient(transparent 62%,var(--algae-soft) 62%)}
+#tip{position:fixed;z-index:50;max-width:300px;background:var(--ink);color:var(--bg);font-size:14px;line-height:1.6;padding:10px 12px;border-radius:8px;box-shadow:0 8px 24px rgb(0 0 0 / .25)}
+#tip b{display:block;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;opacity:.75;margin-bottom:2px}
+
+/* 得主 */
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.person img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--line)}
+.person .pb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.person .baton{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--blue)}
+.person h3{font-size:19px}
+.person .zh{font-size:13.5px;color:var(--ink3)}
+.person p{font-size:14.5px;color:var(--ink2);line-height:1.7}
+.credit{font-size:12px;color:var(--ink3);margin-top:12px}
+
+table{border-collapse:collapse;width:100%;font-size:15px;min-width:520px}
+.tbl{overflow-x:auto;margin:22px 0;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.6}
+th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink3);font-weight:500;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+
+.note{border-left:3px solid var(--amber);background:var(--amber-soft);padding:12px 16px;border-radius:0 8px 8px 0;font-size:15.5px}
+.note b{color:var(--amber)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:18px 0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:2.2em 1fr;gap:8px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--mono);font-size:13px;color:var(--blue);border:1px solid var(--blue);border-radius:50%;width:1.9em;height:1.9em;display:grid;place-items:center;margin-top:.2em}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:22px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.card h3{font-size:17px;margin-bottom:4px}
+.card p{font-size:14.5px;color:var(--ink2);line-height:1.7}
+
+/* 闖關 */
+.quiz{display:grid;gap:16px;margin-top:10px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.q .qn{font-family:var(--mono);font-size:12px;color:var(--ink3);letter-spacing:.06em}
+.q h3{font-family:var(--sans);font-size:16.5px;font-weight:700;margin:4px 0 10px;line-height:1.6}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--ink);font:15px/1.6 var(--sans);cursor:pointer}
+.opt:hover{border-color:var(--blue)}
+.opt .k{font-family:var(--mono);color:var(--ink3)}
+.opt.right{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,var(--surface))}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt[disabled]{cursor:default}
+.fb{margin-top:10px;font-size:14.5px;line-height:1.7;color:var(--ink2)}
+.fb b.ok{color:var(--ok)} .fb b.no{color:var(--red)}
+.score{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-top:6px}
+.score .big{font-family:var(--mono);font-size:28px;font-weight:600;font-variant-numeric:tabular-nums}
+.btn{font:14px var(--sans);background:var(--blue);color:var(--surface);border:0;border-radius:8px;padding:8px 14px;cursor:pointer}
+.btn.ghost{background:none;color:var(--ink2);border:1px solid var(--line)}
+.diag{margin-top:14px;display:grid;gap:8px}
+.diag div{font-size:14.5px;background:var(--red-soft);border-radius:8px;padding:8px 12px}
+.refs{font-size:14.5px;color:var(--ink2)}
+.refs li{margin:4px 0}
+footer{padding-block:30px 50px;color:var(--ink3);font-size:13px;border-top:1px solid var(--line)}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr;padding-block:30px 18px}
+  .people{grid-template-columns:1fr}
+  .person{flex-direction:row}
+  .person img{width:120px;aspect-ratio:auto;height:auto;object-fit:cover}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .facts{grid-template-columns:1fr}
+  .brand{display:none}
+  .person img{width:96px}
+  section{padding-block:40px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .pulse{animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:.95}}
+}
+</style>
+
+</head><body>
+<nav class="rail" aria-label="章節">
+  <div class="wrap">
+    <span class="brand">NOBEL 2026 · OPTOGENETICS</span>
+    <div class="chips" id="chips">
+      <a href="#s0">序章</a><a href="#s1">得主</a><a href="#s2">衣藻</a><a href="#s3">蛙卵</a><a href="#s4">分子機制</a><a href="#s5">進入神經元</a><a href="#s6">工具箱</a><a href="#s7">因果</a><a href="#s8">臨床</a><a href="#s9">反思</a><a href="#quiz">闖關</a>
+    </div>
+    <button class="theme" id="themeBtn" type="button" aria-label="切換明暗主題">明／暗</button>
+  </div>
+</nav>
+
+<main class="wrap">
+<header class="hero">
+  <div>
+    <div class="eyebrow">2026 諾貝爾生理學或醫學獎</div>
+    <h1>一束<em>藍光</em>，<br>照亮大腦的因果</h1>
+    <p class="lead">從池塘裡的單細胞綠藻，到在毫秒內開關特定腦細胞的工具。這是一場橫跨半世紀的科學接力：一位科學家問出「為什麼」，一位用蛙卵證明答案，一位把它變成全世界腦科學實驗室的標準方法。</p>
+    <div class="facts">
+      <div><b>宣布日期</b><span>2026 年 10 月 5 日</span></div>
+      <div><b>獎金</b><span>1,200 萬瑞典克朗，三人均分</span></div>
+      <div><b>得獎理由</b><span>光閘控離子通道與光遺傳學</span></div>
+    </div>
+  </div>
+  <figure style="margin:0" aria-label="藍光照射神經元示意圖">
+    <svg viewBox="0 0 420 340" role="img">
+      <defs>
+        <linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--blue);stop-opacity:.0"/><stop offset="1" style="stop-color:var(--blue);stop-opacity:.55"/></linearGradient>
+      </defs>
+      <polygon points="40,0 110,0 230,150 196,168" fill="url(#beam)"/>
+      <rect x="44" y="0" width="62" height="14" rx="3" class="f-ink3"/>
+      <text x="75" y="34" text-anchor="middle" class="mono tb" font-size="12">470 nm</text>
+      <!-- 神經元 -->
+      <g class="s-ink" stroke-width="3" fill="none" stroke-linecap="round">
+        <path d="M210 160 C 170 130 150 120 120 112"/><path d="M200 182 C 160 200 140 220 112 236"/>
+        <path d="M232 150 C 236 110 250 90 262 66"/><path d="M250 172 C 330 172 360 176 404 176"/>
+        <path d="M120 112 l-22 -14 M120 112 l-14 18 M112 236 l-26 4 M112 236 l-8 22 M262 66 l-18 -18 M262 66 l20 -10"/>
+      </g>
+      <circle cx="220" cy="168" r="32" class="f-bs s-blue" stroke-width="2.5"/>
+      <circle cx="220" cy="168" r="11" class="f-blue pulse"/>
+      <g class="s-blue" stroke-width="2" fill="none"><path d="M404 176 l0 0"/></g>
+      <!-- 動作電位 -->
+      <g transform="translate(250,236)">
+        <rect x="0" y="0" width="160" height="86" rx="8" class="f-surf s-line" stroke-width="1"/>
+        <path d="M10 64 H38 L42 18 L46 70 L50 64 H76 L80 18 L84 70 L88 64 H114 L118 18 L122 70 L126 64 H150" class="s-blue" stroke-width="2" fill="none"/>
+        <g class="f-blue"><rect x="38" y="76" width="6" height="5"/><rect x="76" y="76" width="6" height="5"/><rect x="114" y="76" width="6" height="5"/></g>
+        <text x="10" y="14" font-size="10.5" class="mono t3">膜電位（mV）</text>
+      </g>
+      <text x="196" y="226" font-size="12.5" class="t2">表現 ChR2 的神經元</text>
+    </svg>
+    <figcaption><b>FIG 0</b>每一個藍光脈衝（下方藍色方塊）都精準誘發一個動作電位。</figcaption>
+  </figure>
+</header>
+
+<!-- 序章 -->
+<section id="s0">
+  <div class="sec-head"><span class="no">序章</span><h2>看得到相關，證不了因果</h2></div>
+  <div class="prose flow">
+    <p>研究大腦的人，幾十年來都被同一個問題困住：我們看得到大腦在做什麼，卻很難證明是哪些細胞「造成」了行為。</p>
+    <p>人腦約有 860 億個神經元，連同膠質細胞，腦細胞總數約 1,700 億，彼此以上百兆個突觸相連。神經元用電訊號溝通：細胞膜內外的離子分布不均形成<button class="kw" data-k="mp">膜電位</button>，膜上的離子通道一開，離子湧入，膜電位改變，超過<button class="kw" data-k="th">閾值電位</button>就發出<button class="kw" data-k="ap">動作電位</button>。一次動作電位只持續千分之幾秒。</p>
+    <p>功能性磁振造影與電極記錄能告訴我們「小鼠恐懼時，這個腦區活動增加了」。但這只是<button class="kw" data-k="corr">相關</button>。那群細胞可能是恐懼的原因，也可能只是恐懼的結果。要回答<button class="kw" data-k="cause">因果</button>，科學家必須親手「開」與「關」特定細胞，再看行為怎麼變。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 250" role="img" aria-label="觀察與介入的比較">
+      <g transform="translate(20,20)">
+        <rect width="340" height="210" rx="10" class="f-bg"/>
+        <text x="18" y="30" font-size="15" font-weight="700">觀察：只能看到相關</text>
+        <circle cx="90" cy="108" r="40" class="f-surf s-ink" stroke-width="2"/>
+        <circle cx="103" cy="98" r="13" class="f-rs s-red" stroke-width="2"/>
+        <text x="90" y="170" text-anchor="middle" font-size="12.5" class="t2">腦區 A 變亮</text>
+        <path d="M150 120 H200" class="s-ink" stroke-width="2" stroke-dasharray="5 5"/>
+        <text x="175" y="110" text-anchor="middle" font-size="18" class="t3">?</text>
+        <g transform="translate(265,108)"><path d="M-30 6 C -50 10 -58 -6 -48 -14" class="s-ink f-none" stroke-width="2"/><ellipse cx="0" cy="0" rx="30" ry="18" class="f-line s-ink" stroke-width="1.5"/><circle cx="28" cy="-10" r="12" class="f-line s-ink" stroke-width="1.5"/><circle cx="24" cy="-24" r="7" class="f-surf s-ink" stroke-width="1.5"/><circle cx="33" cy="-12" r="2" class="f-ink3"/></g>
+        <text x="265" y="150" text-anchor="middle" font-size="12.5" class="t2">小鼠恐懼僵住</text>
+        <text x="170" y="198" text-anchor="middle" font-size="12" class="t3">原因？結果？還是旁觀者？</text>
+      </g>
+      <g transform="translate(400,20)">
+        <rect width="340" height="210" rx="10" class="f-bs"/>
+        <text x="18" y="30" font-size="15" font-weight="700">介入：檢驗因果</text>
+        <circle cx="90" cy="108" r="40" class="f-surf s-ink" stroke-width="2"/>
+        <polygon points="70,30 110,30 110,94 96,98" class="f-blue" opacity=".45"/>
+        <circle cx="103" cy="98" r="13" class="f-blue"/>
+        <text x="90" y="170" text-anchor="middle" font-size="12.5" class="t2">用光打開腦區 A</text>
+        <path d="M150 120 H200" class="s-blue" stroke-width="2.5"/>
+        <path d="M194 113 L204 120 L194 127" class="s-blue" stroke-width="2.5" fill="none"/>
+        <g transform="translate(265,108)"><path d="M-30 6 C -50 10 -58 -6 -48 -14" class="s-ink f-none" stroke-width="2"/><ellipse cx="0" cy="0" rx="30" ry="18" class="f-line s-ink" stroke-width="1.5"/><circle cx="28" cy="-10" r="12" class="f-line s-ink" stroke-width="1.5"/><circle cx="24" cy="-24" r="7" class="f-surf s-ink" stroke-width="1.5"/><circle cx="33" cy="-12" r="2" class="f-ink3"/></g>
+        <text x="265" y="150" text-anchor="middle" font-size="12.5" class="t2">恐懼行為出現了</text>
+        <text x="170" y="198" text-anchor="middle" font-size="12" class="tb">再用光關掉，看行為是否消失</text>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 1</b>觀察只能建立相關；主動開關特定細胞並看行為改變，才提供因果證據。</figcaption>
+  </figure>
+  <div class="prose flow">
+    <p>問題是，2005 年以前，研究者手上只有兩把粗糙的工具。電極<strong>快但不準</strong>，藥物<strong>準但不快</strong>。DNA 雙螺旋的發現者之一 Francis Crick 早在 1979 年就指出，神經科學最需要能只控制某一類細胞的方法；後來他更認為，光或許是理想的訊號。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 230" role="img" aria-label="電極、藥物、光遺傳學三種方法比較">
+      <g font-size="12.5">
+      <g transform="translate(10,10)">
+        <text x="115" y="18" text-anchor="middle" font-size="15" font-weight="700">金屬電極</text>
+        <g class="f-surf s-ink" stroke-width="1.5"><circle cx="60" cy="90" r="13"/><circle cx="105" cy="70" r="13"/><circle cx="160" cy="95" r="13"/><circle cx="85" cy="140" r="13"/><circle cx="145" cy="145" r="13"/></g>
+        <g class="f-rs s-red" stroke-width="1.5"><circle cx="60" cy="90" r="13"/><circle cx="105" cy="70" r="13"/><circle cx="160" cy="95" r="13"/><circle cx="85" cy="140" r="13"/><circle cx="145" cy="145" r="13"/></g>
+        <path d="M110 30 L110 108" class="s-ink" stroke-width="3"/>
+        <circle cx="110" cy="110" r="40" class="f-none s-red" stroke-dasharray="4 4"/><circle cx="110" cy="110" r="62" class="f-none s-red" stroke-dasharray="4 4" opacity=".6"/>
+        <text x="115" y="196" text-anchor="middle" class="t2">毫秒級，但電流擴散</text>
+        <text x="115" y="214" text-anchor="middle" class="tr">所有類型一起被刺激</text>
+      </g>
+      <g transform="translate(265,10)">
+        <text x="115" y="18" text-anchor="middle" font-size="15" font-weight="700">藥物</text>
+        <g class="f-surf s-ink" stroke-width="1.5"><circle cx="60" cy="90" r="13"/><circle cx="105" cy="70" r="13"/><circle cx="160" cy="95" r="13"/><circle cx="85" cy="140" r="13"/><circle cx="145" cy="145" r="13"/></g>
+        <g class="f-amber" opacity=".7"><circle cx="40" cy="60" r="3"/><circle cx="130" cy="120" r="3"/><circle cx="180" cy="130" r="3"/><circle cx="70" cy="115" r="3"/><circle cx="120" cy="45" r="3"/><circle cx="190" cy="70" r="3"/><circle cx="110" cy="160" r="3"/></g>
+        <g transform="translate(190,150)"><circle r="16" class="f-surf s-ink" stroke-width="1.5"/><path d="M0 0 V-10 M0 0 L8 4" class="s-ink" stroke-width="2"/></g>
+        <text x="115" y="196" text-anchor="middle" class="t2">可依受體選細胞</text>
+        <text x="115" y="214" text-anchor="middle" class="ta">起效數秒到數小時，太慢</text>
+      </g>
+      <g transform="translate(520,10)">
+        <text x="115" y="18" text-anchor="middle" font-size="15" font-weight="700">光遺傳學</text>
+        <polygon points="96,26 126,26 160,98 140,104" class="f-blue" opacity=".35"/>
+        <g class="f-surf s-ink" stroke-width="1.5"><circle cx="60" cy="90" r="13"/><circle cx="85" cy="140" r="13"/><circle cx="145" cy="145" r="13"/></g>
+        <g class="f-blue s-blue" stroke-width="1.5"><circle cx="105" cy="70" r="13"/><circle cx="160" cy="95" r="13"/></g>
+        <text x="115" y="196" text-anchor="middle" class="t2">只有表現 ChR2 的細胞回應</text>
+        <text x="115" y="214" text-anchor="middle" class="tb">又快又準</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 2</b>快與準不可兼得的困境，直到光遺傳學出現：光負責「何時」，基因負責「哪些細胞」。</figcaption>
+  </figure>
+</section>
+
+<!-- 得主 -->
+<section id="s1">
+  <div class="sec-head"><span class="no">01</span><h2>三位得主，三棒接力</h2></div>
+  <div class="prose"><p>三人分屬「發現分子」與「發明工具」兩端，正好示範了跨領域合作如何把一個冷門的基礎問題，變成改寫神經科學的方法。</p></div>
+  <div class="people" style="margin-top:22px">
+    <article class="person">
+      <img src="data:image/webp;base64,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" alt="Peter Hegemann 人像照片" width="320" height="400">
+      <div class="pb"><span class="baton">第一棒｜提出假說</span><h3>Peter Hegemann</h3><span class="zh">彼得・赫吉曼｜德國，1954 年生｜柏林洪堡大學</span>
+      <p>光生物物理學家。長期研究衣藻如何游向光，推論感光蛋白本身就是離子通道。</p></div>
+    </article>
+    <article class="person">
+      <img src="data:image/webp;base64,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" alt="Georg Nagel 人像照片" width="320" height="400">
+      <div class="pb"><span class="baton">第二棒｜證實分子</span><h3>Georg Nagel</h3><span class="zh">喬治・內格爾｜德國，1953 年生｜維爾茨堡大學</span>
+      <p>電生理學家。在蛙卵與人類培養細胞中證明，光可以直接打開這個通道。</p></div>
+    </article>
+    <article class="person">
+      <img src="data:image/webp;base64,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" alt="Karl Deisseroth 人像照片" width="320" height="400">
+      <div class="pb"><span class="baton">第三棒｜發明工具</span><h3>Karl Deisseroth</h3><span class="zh">卡爾・戴瑟羅斯｜美國，1971 年生｜史丹佛大學／HHMI</span>
+      <p>精神科醫師兼生物工程學家。把通道送進神經元，命名並建立了光遺傳學。</p></div>
+    </article>
+  </div>
+  <p class="credit">照片來源：Wikimedia Commons。Hegemann 攝影 Millencolin（CC BY-SA 4.0）；Nagel 攝影 Millencolin（CC0）；Deisseroth 攝影 Cmichel67（CC BY-SA 4.0）。照片經裁切。</p>
+</section>
+
+<!-- 衣藻 -->
+<section id="s2">
+  <div class="sec-head"><span class="no">02</span><h2>第一棒：池塘裡的綠藻與一個大膽的假說</h2></div>
+  <div class="prose flow">
+    <p>故事的起點不在醫院，而在一個「看起來沒什麼用」的問題：一個沒有眼睛的細胞，怎麼知道光從哪裡來？</p>
+    <p><button class="kw g" data-k="chlamy">萊茵衣藻</button>是一種單細胞綠藻，長著兩根鞭毛，細胞一側有橙紅色的<button class="kw a" data-k="eyespot">眼點</button>。它靠光合作用過活，所以會朝適合的光線游去，光太強時又會躲開。感光、處理訊號、轉向，全部在一個細胞裡完成。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 270" role="img" aria-label="衣藻構造與趨光示意圖">
+      <g transform="translate(40,20)">
+        <path d="M150 40 C 120 0 80 -6 50 4" class="s-algae f-none" stroke-width="2.5"/>
+        <path d="M168 40 C 190 0 230 -6 262 6" class="s-algae f-none" stroke-width="2.5"/>
+        <ellipse cx="160" cy="130" rx="90" ry="100" class="f-gs s-algae" stroke-width="2.5"/>
+        <path d="M100 150 C 110 200 210 200 222 150 C 210 175 112 175 100 150Z" class="f-algae" opacity=".55"/>
+        <circle cx="160" cy="110" r="22" class="f-surf s-algae" stroke-width="2"/>
+        <circle cx="160" cy="110" r="8" class="f-algae" opacity=".6"/>
+        <ellipse cx="236" cy="118" rx="11" ry="16" class="f-amber"/>
+        <path d="M262 118 H330" class="s-ink" stroke-width="1.2"/><text x="336" y="114" font-size="13">眼點</text><text x="336" y="132" font-size="11.5" class="t3">含視網醛的感光區</text>
+        <path d="M212 6 H330" class="s-ink" stroke-width="1.2"/><text x="336" y="10" font-size="13">兩根鞭毛</text>
+        <path d="M190 170 H330" class="s-ink" stroke-width="1.2"/><text x="336" y="174" font-size="13">葉綠體</text>
+        <path d="M168 110 H330" class="s-ink" stroke-width="1.2" opacity=".0"/>
+        <text x="40" y="250" font-size="12" class="mono t3">單細胞，直徑約 10 µm</text>
+      </g>
+      <g transform="translate(520,30)">
+        <rect width="210" height="210" rx="10" class="f-bg"/>
+        <polygon points="210,60 210,150 120,105" class="f-blue" opacity=".25"/>
+        <text x="196" y="50" text-anchor="end" font-size="12" class="tb">光源</text>
+        <g class="f-algae"><circle cx="150" cy="92" r="5"/><circle cx="165" cy="110" r="5"/><circle cx="142" cy="120" r="5"/><circle cx="175" cy="96" r="5"/><circle cx="158" cy="128" r="5"/><circle cx="60" cy="40" r="5" opacity=".5"/><circle cx="40" cy="170" r="5" opacity=".5"/></g>
+        <path d="M60 40 Q100 70 128 96" class="s-algae f-none" stroke-dasharray="3 4"/>
+        <path d="M40 170 Q90 150 132 120" class="s-algae f-none" stroke-dasharray="3 4"/>
+        <text x="105" y="200" text-anchor="middle" font-size="12.5" class="t2">趨光性：游向適合的光</text>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 3</b>衣藻沒有神經與大腦，卻能用眼點感光、用鞭毛轉向。這個「單細胞的視覺」藏著今年獎項的分子。</figcaption>
+  </figure>
+  <div class="prose flow">
+    <p>Hegemann 的博士指導教授 Dieter Oesterhelt，是研究嗜鹽微生物感光膜蛋白的先驅；1971 年前後，Oesterhelt 等人在嗜鹽菌身上發現了能用光搬運質子的細菌視紫質。Hegemann 自己的博士論文，研究的則是用光搬運氯離子的鹵視紫質。</p>
+    <p>1980 年代起，他把目光轉向衣藻。當時已知衣藻的感光分子含有<button class="kw" data-k="retinal">視網醛</button>，與我們眼中的<button class="kw" data-k="rho">視紫素</button>同一類。主流觀點認為，衣藻應該像我們的眼睛一樣，先感光，再經一連串化學反應，最後才打開離子通道。</p>
+    <p>Hegemann 的精密測量卻發現，光照到衣藻後，眼點附近的細胞膜在<strong>不到一毫秒</strong>內就出現電流。這太快了，快到不可能經過多步驟的訊息傳遞。他推論：<strong>感光的部分和讓離子通過的部分，是同一個蛋白質</strong>。這個假說等了十多年，直到 2000 年前後衣藻的基因序列公開，才找到兩個候選基因。</p>
+  </div>
+</section>
+
+<!-- 蛙卵 -->
+<section id="s3">
+  <div class="sec-head"><span class="no">03</span><h2>第二棒：蛙卵裡的證據</h2></div>
+  <div class="prose flow">
+    <p>假說要變成知識，需要一個乾淨的實驗：把候選基因放進原本對光毫無反應的細胞，看它會不會因此「看見」光。Nagel 的專長正是在<button class="kw" data-k="oocyte">非洲爪蟾卵母細胞</button>中表現外來膜蛋白，再用電極量測跨膜電流。</p>
+    <p>他在法蘭克福馬克斯普朗克生物物理研究所，與 Ernst Bamberg、Hegemann 合作，把衣藻候選基因轉錄成 RNA 注入蛙卵。結果分兩步發表：</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 250" role="img" aria-label="蛙卵實驗流程">
+      <g font-size="12.5">
+      <g transform="translate(20,30)">
+        <text x="80" y="0" text-anchor="middle" font-size="14" font-weight="700">① 注入 RNA</text>
+        <circle cx="80" cy="95" r="62" class="f-as s-amber" stroke-width="2"/>
+        <path d="M80 95 A62 62 0 0 1 18 95Z" class="f-amber" opacity=".25"/>
+        <path d="M150 20 L96 80" class="s-ink" stroke-width="3"/>
+        <text x="150" y="16" font-size="11.5" class="t3">微量注射針</text>
+        <text x="80" y="185" text-anchor="middle" class="t2">衣藻候選基因的 RNA</text>
+      </g>
+      <path d="M200 125 H250 M242 118 L252 125 L242 132" class="s-ink f-none" stroke-width="2"/>
+      <g transform="translate(270,30)">
+        <text x="80" y="0" text-anchor="middle" font-size="14" font-weight="700">② 膜上出現 ChR</text>
+        <circle cx="80" cy="95" r="62" class="f-as s-amber" stroke-width="2"/>
+        <g class="f-algae"><rect x="72" y="28" width="16" height="12" rx="3"/><rect x="134" y="88" width="12" height="16" rx="3"/><rect x="14" y="88" width="12" height="16" rx="3"/><rect x="72" y="150" width="16" height="12" rx="3"/><rect x="118" y="44" width="13" height="13" rx="3" transform="rotate(45 124 50)"/><rect x="28" y="132" width="13" height="13" rx="3" transform="rotate(45 34 138)"/></g>
+        <text x="80" y="185" text-anchor="middle" class="t2">蛙卵自己把蛋白質造出來</text>
+      </g>
+      <path d="M450 125 H500 M492 118 L502 125 L492 132" class="s-ink f-none" stroke-width="2"/>
+      <g transform="translate(520,30)">
+        <text x="110" y="0" text-anchor="middle" font-size="14" font-weight="700">③ 照光就有電流</text>
+        <rect x="0" y="22" width="220" height="140" rx="8" class="f-bg"/>
+        <rect x="70" y="30" width="70" height="124" class="f-bs"/>
+        <text x="105" y="46" text-anchor="middle" font-size="11" class="tb">藍光照射</text>
+        <path d="M12 70 H70 C 74 70 74 130 80 130 H136 C 142 130 142 70 148 70 H208" class="s-blue f-none" stroke-width="2.5"/>
+        <text x="12" y="62" font-size="11" class="mono t3">電流</text>
+        <text x="110" y="185" text-anchor="middle" class="t2">光一停，電流就消失</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 4</b>異源表現實驗：原本對光沒有反應的蛙卵，裝上衣藻的蛋白後，一照光就出現內向電流。</figcaption>
+  </figure>
+  <div class="tbl"><table>
+    <tr><th>年份與期刊</th><th>蛋白</th><th>發現</th></tr>
+    <tr><td>2002《Science》</td><td>通道視紫紅質-1（ChR1）</td><td>照光立即產生質子（H⁺）電流，首次確認「直接由光打開的離子通道」</td></tr>
+    <tr><td>2003《PNAS》</td><td>通道視紫紅質-2（ChR2）</td><td>藍光下產生更大的陽離子電流（Na⁺、H⁺、K⁺、Ca²⁺），在人類培養細胞 HEK293 中也能運作；論文已預告可用光控制細胞</td></tr>
+  </table></div>
+  <div class="prose"><p>ChR2 讓陽離子流入，恰好就是神經元放電所需要的事。一位分子植物生理學教授和一位光生物物理學家，為醫學獎打下了基礎。</p></div>
+</section>
+
+<!-- 機制 -->
+<section id="s4">
+  <div class="sec-head"><span class="no">04</span><h2>一個蛋白，同時是眼睛也是門</h2></div>
+  <div class="prose flow">
+    <p>ChR2 是 7 段跨膜螺旋組成的膜蛋白，內部以共價鍵結合一個全反式<button class="kw" data-k="retinal">視網醛</button>。課本把<button class="kw" data-k="gated">閘控通道</button>分為電位敏感型與化學敏感型；ChR2 是第三種：<strong>光敏感型</strong>。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 300" role="img" aria-label="ChR2 關閉與開啟狀態">
+      <defs><marker id="arB" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" class="f-blue"/></marker></defs>
+      <g font-size="12.5">
+      <text x="20" y="40" class="t3 mono" font-size="11.5">細胞外</text>
+      <text x="20" y="262" class="t3 mono" font-size="11.5">細胞內</text>
+      <rect x="0" y="110" width="760" height="70" class="f-as" opacity=".6"/>
+      <g class="f-amber" opacity=".5"><circle cx="30" cy="118" r="5"/><circle cx="50" cy="118" r="5"/><circle cx="70" cy="118" r="5"/><circle cx="30" cy="172" r="5"/><circle cx="50" cy="172" r="5"/><circle cx="70" cy="172" r="5"/><circle cx="700" cy="118" r="5"/><circle cx="720" cy="118" r="5"/><circle cx="740" cy="118" r="5"/><circle cx="700" cy="172" r="5"/><circle cx="720" cy="172" r="5"/><circle cx="740" cy="172" r="5"/></g>
+      <!-- 關閉 -->
+      <g transform="translate(150,0)">
+        <text x="80" y="24" text-anchor="middle" font-size="15" font-weight="700">黑暗：通道關閉</text>
+        <rect x="30" y="96" width="44" height="98" rx="14" class="f-gs s-algae" stroke-width="2"/>
+        <rect x="86" y="96" width="44" height="98" rx="14" class="f-gs s-algae" stroke-width="2"/>
+        <path d="M66 145 l8 -10 l8 10 l8 -10 l8 10" class="s-ink f-none" stroke-width="2.5"/>
+        <text x="80" y="214" text-anchor="middle" class="t2">全反式視網醛</text>
+        <g class="f-surf s-ink"><circle cx="40" cy="60" r="11"/><circle cx="120" cy="55" r="11"/><circle cx="80" cy="70" r="11"/></g>
+        <g font-size="10" class="mono" text-anchor="middle"><text x="40" y="64">Na⁺</text><text x="120" y="59">Na⁺</text><text x="80" y="74">Na⁺</text></g>
+      </g>
+      <path d="M345 145 H405" class="s-ink" stroke-width="2"/><path d="M398 138 L408 145 L398 152" class="s-ink f-none" stroke-width="2"/>
+      <text x="376" y="132" text-anchor="middle" class="tb" font-size="12">藍光 470 nm</text>
+      <!-- 開啟 -->
+      <g transform="translate(440,0)">
+        <polygon points="40,0 120,0 104,96 56,96" class="f-blue" opacity=".2"/>
+        <text x="80" y="24" text-anchor="middle" font-size="15" font-weight="700">照光：通道打開</text>
+        <rect x="16" y="96" width="44" height="98" rx="14" class="f-gs s-algae" stroke-width="2"/>
+        <rect x="100" y="96" width="44" height="98" rx="14" class="f-gs s-algae" stroke-width="2"/>
+        <path d="M60 128 l8 -10 l8 10 l8 -4 l10 -14" class="s-ink f-none" stroke-width="2.5"/>
+        <path d="M80 70 V250" class="s-blue" stroke-width="2.5" marker-end="url(#arB)"/>
+        <g class="f-bs s-blue"><circle cx="80" cy="60" r="11"/><circle cx="80" cy="160" r="11"/><circle cx="80" cy="232" r="11"/></g>
+        <g font-size="10" class="mono" text-anchor="middle"><text x="80" y="64">Na⁺</text><text x="80" y="164">Na⁺</text><text x="80" y="236">Na⁺</text></g>
+        <text x="150" y="214" class="t2">13-順式視網醛</text>
+        <text x="150" y="250" class="tb">陽離子內流 → 去極化</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 5</b>視網醛吸收藍光後由全反式轉成 13-順式，帶動蛋白質構形改變、孔道打開，陽離子順著電化學梯度流入（被動運輸）。光一停，通道自動關閉。</figcaption>
+  </figure>
+  <ol class="steps prose">
+    <li><span>藍光（吸收峰約 470 nm）被視網醛吸收。</span></li>
+    <li><span>視網醛異構化為 13-順式，蛋白質中央孔道打開。</span></li>
+    <li><span>陽離子流入，在神經元中以 Na⁺ 為主，屬於不耗能的被動運輸。</span></li>
+    <li><span>膜電位由約 −70 mV 上升，<button class="kw" data-k="depol">去極化</button>。</span></li>
+    <li><span>越過約 −50 mV 的閾值電位，電位敏感型鈉離子通道全面開啟，爆發動作電位。</span></li>
+    <li><span>光一停，視網醛回到原構型，通道在毫秒到數十毫秒內關閉。</span></li>
+  </ol>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 260" role="img" aria-label="藍光脈衝與膜電位曲線">
+      <g font-size="12">
+      <g transform="translate(70,20)">
+        <line x1="0" y1="0" x2="0" y2="190" class="s-line" stroke-width="1"/>
+        <line x1="0" y1="190" x2="660" y2="190" class="s-line" stroke-width="1"/>
+        <!-- y scale: +30 mV ->0, -80 -> 176 ; y = (30 - v)*1.6 -->
+        <line x1="0" y1="160" x2="660" y2="160" class="s-ink" stroke-dasharray="3 4" opacity=".5"/>
+        <line x1="0" y1="128" x2="660" y2="128" class="s-red" stroke-dasharray="6 4"/>
+        <text x="-8" y="164" text-anchor="end" class="mono t2">−70</text>
+        <text x="-8" y="132" text-anchor="end" class="mono tr">−50</text>
+        <text x="-8" y="52" text-anchor="end" class="mono t2">0</text>
+        <text x="-8" y="10" text-anchor="end" class="mono t2">+30</text>
+        <text x="664" y="124" text-anchor="end" class="tr" font-size="11.5">閾值電位</text>
+        <text x="664" y="156" text-anchor="end" class="t2" font-size="11.5">靜止膜電位</text>
+        <g class="f-blue">
+          <rect x="60" y="178" width="10" height="10"/><rect x="200" y="178" width="10" height="10"/>
+          <rect x="400" y="178" width="10" height="10"/><rect x="460" y="178" width="10" height="10"/><rect x="520" y="178" width="10" height="10"/><rect x="580" y="178" width="10" height="10"/>
+        </g>
+        <path d="M0 160 H60 L66 128 L72 4 L80 172 L92 160 H200 L206 128 L212 4 L220 172 L232 160 H400 L406 128 L412 4 L420 172 L432 160 H460 L466 128 L472 4 L480 172 L492 160 H520 L526 128 L532 4 L540 172 L552 160 H580 L586 128 L592 4 L600 172 L612 160 H660" class="s-blue f-none" stroke-width="2.2"/>
+        <text x="120" y="230" text-anchor="middle" class="t2">低頻閃光：放電稀疏</text>
+        <text x="500" y="230" text-anchor="middle" class="t2">高頻閃光：放電變密</text>
+        <text x="330" y="40" text-anchor="middle" class="tb">每個動作電位的高度都一樣（全有全無）</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 6</b>藍色方塊是光脈衝。提高閃光頻率，動作電位的<strong>次數</strong>增加，單一動作電位的<strong>大小</strong>不變。</figcaption>
+  </figure>
+  <div class="tbl"><table>
+    <tr><th>比較</th><th>通道視紫紅質（衣藻）</th><th>視紫素（人眼視桿細胞）</th></tr>
+    <tr><td>組成</td><td>7 段跨膜蛋白＋視網醛</td><td>7 段跨膜蛋白（視蛋白）＋視網醛</td></tr>
+    <tr><td>光引起的異構化</td><td>全反式 → 13-順式</td><td>11-順式 → 全反式</td></tr>
+    <tr><td>工作方式</td><td>本身就是離子通道</td><td>G 蛋白偶聯受體，經串聯反應間接關閉通道</td></tr>
+    <tr><td>特性</td><td>毫秒級、一步到位</td><td>較慢，但放大倍數極高，能偵測極弱的光</td></tr>
+    <tr><td>在生物中的用途</td><td>趨光游泳</td><td>弱光視覺</td></tr>
+  </table></div>
+  <div class="prose"><p>這是演化上兩種不同的取捨。衣藻需要快速轉向，選了「一步到位」；我們要在月光下看見東西，選了「訊號放大」。對科學家而言，衣藻的選擇剛好就是理想的開關：快、乾淨、不需要其他零件。</p></div>
+</section>
+
+<!-- 神經元 -->
+<section id="s5">
+  <div class="sec-head"><span class="no">05</span><h2>第三棒：精神科醫師把藻類蛋白放進神經元</h2></div>
+  <div class="prose flow">
+    <p>Deisseroth 1998 年取得史丹佛大學神經科學博士，2000 年取得醫學博士，至今仍在看診。他看到精神藥物作用於整個大腦，副作用大、效果不確定；病變可能只涉及少數迴路，醫師卻只能對整個器官下藥。</p>
+    <p>2004 年他在史丹佛成立實驗室，與研究生 Edward Boyden、張鋒合作，向 Nagel 取得 ChR2 基因。他們借用基因治療的技術：去掉病毒的致病基因、換上想送的基因，病毒就成了快遞。2005 年用的是<button class="kw" data-k="lenti">慢病毒</button>。</p>
+    <p>2005 年 8 月，論文刊登於《Nature Neuroscience》：培養的大鼠海馬迴神經元表現 ChR2 後，每一個藍光脈衝都能精準誘發一個動作電位。更令人驚喜的是，哺乳類神經組織本身就含有足夠的視網醛，不必額外添加。2006 年，Deisseroth 為這套方法命名為<button class="kw" data-k="opto">光遺傳學</button>。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 270" role="img" aria-label="啟動子決定哪些細胞表現 ChR2">
+      <g font-size="12.5">
+      <g transform="translate(20,20)">
+        <text x="0" y="14" font-size="14" font-weight="700">病毒載荷</text>
+        <rect x="0" y="34" width="70" height="30" rx="4" class="f-as s-amber"/>
+        <text x="35" y="54" text-anchor="middle" font-size="11.5">啟動子</text>
+        <rect x="70" y="34" width="110" height="30" rx="4" class="f-gs s-algae"/>
+        <text x="125" y="54" text-anchor="middle" font-size="11.5">ChR2 基因</text>
+        <text x="0" y="90" font-size="11.5" class="t3">啟動子＝只有特定細胞才讀得懂的「門禁卡」</text>
+        <g transform="translate(70,150)">
+          <polygon points="0,-34 30,-17 30,17 0,34 -30,17 -30,-17" class="f-surf s-ink" stroke-width="2"/>
+          <rect x="-18" y="-8" width="10" height="16" class="f-amber"/><rect x="-8" y="-8" width="24" height="16" class="f-algae"/>
+          <text x="0" y="56" text-anchor="middle" class="t2">去除致病基因的病毒</text>
+        </g>
+      </g>
+      <path d="M220 160 H270 M262 153 L272 160 L262 167" class="s-ink f-none" stroke-width="2"/>
+      <g transform="translate(290,30)">
+        <g transform="translate(70,90)">
+          <circle r="54" class="f-surf s-ink" stroke-width="2"/><text y="-8" text-anchor="middle" font-size="13">膠質細胞</text>
+          <text y="14" text-anchor="middle" class="t3" font-size="12">讀不懂啟動子</text><text y="80" text-anchor="middle" class="t2">不表現 ChR2</text>
+        </g>
+        <g transform="translate(220,90)">
+          <circle r="54" class="f-surf s-ink" stroke-width="2"/><text y="-8" text-anchor="middle" font-size="13">其他神經元</text>
+          <text y="14" text-anchor="middle" class="t3" font-size="12">讀不懂啟動子</text><text y="80" text-anchor="middle" class="t2">不表現 ChR2</text>
+        </g>
+        <g transform="translate(370,90)">
+          <circle r="54" class="f-bs s-blue" stroke-width="2.5"/>
+          <g class="f-algae"><rect x="-6" y="-58" width="12" height="9" rx="2"/><rect x="49" y="-6" width="9" height="12" rx="2"/><rect x="-58" y="-6" width="9" height="12" rx="2"/><rect x="-6" y="49" width="12" height="9" rx="2"/></g>
+          <text y="-8" text-anchor="middle" font-size="13" font-weight="700">目標神經元</text>
+          <text y="14" text-anchor="middle" class="tb" font-size="12">啟動子被啟動</text><text y="80" text-anchor="middle" class="tb">膜上裝好 ChR2</text>
+        </g>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 7</b>同一個動物的細胞基因都相同，表現的基因卻不同。在 ChR2 前接上細胞類型專一性啟動子，只有目標細胞會把開關造出來。課本基因治療也用同一策略。</figcaption>
+  </figure>
+</section>
+
+<!-- 工具箱 -->
+<section id="s6">
+  <div class="sec-head"><span class="no">06</span><h2>能開，也要能關：光纖與工具箱</h2></div>
+  <div class="prose flow">
+    <p>腦組織會強烈散射與吸收可見光，光從頭皮外照不進去。2007 年前後，Deisseroth 團隊發展出植入式的細<button class="kw" data-k="fiber">光纖</button>，把光送進清醒、自由活動動物的深部腦區。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 240" role="img" aria-label="植入光纖照射深部腦區">
+      <g font-size="12.5">
+      <g transform="translate(40,20)">
+        <path d="M40 150 C 40 70 120 30 220 34 C 330 38 400 80 420 130 C 430 160 400 190 360 196 L 80 196 C 54 196 40 176 40 150Z" class="f-bg s-ink" stroke-width="2"/>
+        <path d="M110 120 C 140 70 300 60 350 120 C 320 170 150 175 110 120Z" class="f-rs s-red" stroke-width="1.5" opacity=".7"/>
+        <text x="230" y="112" text-anchor="middle" class="t2">小鼠腦</text>
+        <rect x="252" y="0" width="12" height="150" class="f-ink3"/>
+        <rect x="246" y="-6" width="24" height="16" rx="3" class="f-ink3"/>
+        <polygon points="252,150 264,150 296,196 220,196" class="f-blue" opacity=".45"/>
+        <g class="f-blue"><circle cx="244" cy="178" r="5"/><circle cx="262" cy="186" r="5"/><circle cx="278" cy="176" r="5"/></g>
+        <text x="300" y="20" class="t2">光纖（直徑與頭髮相近）</text>
+        <text x="306" y="186" class="tb">只有表現 ChR2 的細胞被照亮後放電</text>
+      </g>
+      <g transform="translate(560,40)">
+        <rect width="170" height="150" rx="10" class="f-bs"/>
+        <text x="85" y="34" text-anchor="middle" font-weight="700">光學×遺傳</text>
+        <text x="85" y="66" text-anchor="middle" class="t2">遺傳：決定哪些細胞</text>
+        <text x="85" y="92" text-anchor="middle" class="t2">光：決定何時、何處</text>
+        <text x="85" y="128" text-anchor="middle" class="tb mono" font-size="12">毫秒級 × 細胞專一</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 8</b>光纖把光送到深部腦區；真正決定哪些細胞反應的，是它們有沒有表現光敏蛋白。</figcaption>
+  </figure>
+  <div class="prose flow">
+    <p>只能開不能關，就只能證明一半的因果。2007 年，研究者把 ChR2 與嗜鹽古菌的<button class="kw a" data-k="nphr">鹵視紫質</button>放進同一個細胞：藍光開，黃光關。此後工具箱逐年擴充，依光的顏色分工。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 290" role="img" aria-label="光遺傳學工具的激發波長">
+      <defs><linearGradient id="spec" x1="0" x2="1">
+        <stop offset="0" stop-color="#6b3fd0"/><stop offset=".22" stop-color="#2f6fe8"/><stop offset=".38" stop-color="#1fa7b0"/><stop offset=".5" stop-color="#3fae4a"/><stop offset=".63" stop-color="#e3c22a"/><stop offset=".76" stop-color="#ee8f1d"/><stop offset="1" stop-color="#cf2f22"/></linearGradient></defs>
+      <g font-size="12">
+      <g transform="translate(60,30)">
+        <!-- x = (nm-400)*2.2 ; 400->0, 700->660 -->
+        <rect x="0" y="120" width="660" height="18" rx="3" fill="url(#spec)"/>
+        <g class="mono t2" text-anchor="middle"><text x="0" y="158">400</text><text x="220" y="158">500</text><text x="440" y="158">600</text><text x="660" y="158">700 nm</text></g>
+        <!-- ChR2 470 -->
+        <line x1="154" y1="54" x2="154" y2="118" class="s-blue" stroke-width="2"/><circle cx="154" cy="50" r="5" class="f-blue"/>
+        <text x="154" y="22" text-anchor="middle" font-weight="700">ChR2</text><text x="154" y="38" text-anchor="middle" class="tb">470 nm｜開</text>
+        <!-- GtACR 515 -->
+        <line x1="253" y1="84" x2="253" y2="118" class="s-algae" stroke-width="2"/><circle cx="253" cy="80" r="5" class="f-algae"/>
+        <text x="253" y="56" text-anchor="middle" font-weight="700">GtACR</text><text x="253" y="72" text-anchor="middle" class="tg">515 nm｜關</text>
+        <!-- NpHR 590 -->
+        <line x1="418" y1="54" x2="418" y2="118" class="s-amber" stroke-width="2"/><circle cx="418" cy="50" r="5" class="f-amber"/>
+        <text x="418" y="22" text-anchor="middle" font-weight="700">NpHR</text><text x="418" y="38" text-anchor="middle" class="ta">590 nm｜關</text>
+        <!-- Chrimson 590-660 -->
+        <rect x="418" y="92" width="154" height="8" rx="4" class="f-red" opacity=".7"/>
+        <text x="560" y="84" text-anchor="middle" font-weight="700">Chrimson 等</text><text x="560" y="68" text-anchor="middle" class="tr">590–660 nm｜開，穿透較深</text>
+      </g>
+      <g transform="translate(60,210)">
+        <rect width="310" height="64" rx="8" class="f-bs"/>
+        <text x="14" y="26" font-weight="700" class="tb">開：陽離子通道</text>
+        <text x="14" y="48" class="t2">陽離子流入 → 去極化 → 放電</text>
+        <rect x="350" y="0" width="310" height="64" rx="8" class="f-as"/>
+        <text x="364" y="26" font-weight="700" class="ta">關：Cl⁻ 幫浦或陰離子通道</text>
+        <text x="364" y="48" class="t2">Cl⁻ 進入 → 過極化 → 難以放電</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 9</b>不同蛋白吸收不同顏色的光。紅移蛋白在組織中穿透較深，是眼科臨床的主角。</figcaption>
+  </figure>
+  <div class="note"><b>常見誤解：</b>不是「同一個蛋白藍光開、綠光關」。ChR2 光一停就自己關上；要主動讓神經元沉默，得另外表現 NpHR（主動運輸的光驅動幫浦）或 GtACR（被動運輸的陰離子通道）。</div>
+</section>
+
+<!-- 因果 -->
+<section id="s7">
+  <div class="sec-head"><span class="no">07</span><h2>從相關到因果</h2></div>
+  <div class="prose flow">
+    <p>光遺傳學最深的影響，是讓神經科學從「觀察」變成「介入」。開了行為出現，代表這群細胞<button class="kw" data-k="suff">足以</button>產生行為；關了行為消失，代表行為<button class="kw" data-k="nec">需要</button>這群細胞。再加上對照組排除光與病毒的干擾，才構成完整的因果證據。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 250" role="img" aria-label="因果實驗的四個組別">
+      <g font-size="12.5">
+      <g transform="translate(150,20)">
+        <text x="140" y="-2" text-anchor="middle" class="t3 mono" font-size="11.5">照光</text>
+        <text x="420" y="-2" text-anchor="middle" class="t3 mono" font-size="11.5">不照光</text>
+        <text x="-14" y="64" text-anchor="end" class="t3 mono" font-size="11.5">有 ChR2</text>
+        <text x="-14" y="170" text-anchor="end" class="t3 mono" font-size="11.5">無 ChR2</text>
+        <rect x="0" y="8" width="280" height="100" rx="8" class="f-bs s-blue"/>
+        <text x="140" y="48" text-anchor="middle" font-weight="700" class="tb">實驗組</text><text x="140" y="74" text-anchor="middle" class="t2">行為出現 → 足以產生</text>
+        <rect x="290" y="8" width="280" height="100" rx="8" class="f-bg s-line"/>
+        <text x="430" y="48" text-anchor="middle" font-weight="700">對照：排除病毒與外來蛋白</text><text x="430" y="74" text-anchor="middle" class="t2">預期無變化</text>
+        <rect x="0" y="118" width="280" height="100" rx="8" class="f-bg s-line"/>
+        <text x="140" y="158" text-anchor="middle" font-weight="700">對照：排除光與熱</text><text x="140" y="184" text-anchor="middle" class="t2">預期無變化</text>
+        <rect x="290" y="118" width="280" height="100" rx="8" class="f-as s-amber"/>
+        <text x="430" y="158" text-anchor="middle" font-weight="700" class="ta">另一組：NpHR＋黃光</text><text x="430" y="184" text-anchor="middle" class="t2">行為消失 → 需要這群細胞</text>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 10</b>充分性、必要性與兩個對照組，構成一個嚴謹的光遺傳實驗。這也是探究與實作課最好的範例。</figcaption>
+  </figure>
+  <div class="tbl"><table>
+    <tr><th>年份</th><th>實驗</th><th>告訴我們什麼</th></tr>
+    <tr><td>2007</td><td>光刺激下視丘的食慾素神經元</td><td>睡眠中的小鼠提前醒來，特定神經元能導致覺醒</td></tr>
+    <tr><td>2009</td><td>光刺激中腦多巴胺神經元</td><td>小鼠偏好停留在會亮燈的區域，為獎賞迴路提供因果證據</td></tr>
+    <tr><td>2009</td><td>帕金森氏症模型小鼠</td><td>釐清深腦刺激可能作用在哪些迴路</td></tr>
+    <tr><td>2012</td><td>利根川進團隊與 Deisseroth 合作標記恐懼記憶細胞</td><td>在安全環境單獨活化這群細胞，小鼠立刻僵住：記憶存在可定位的「記憶印跡」細胞中</td></tr>
+    <tr><td>2013</td><td>光刺激多巴胺神經元</td><td>快速逆轉壓力造成的憂鬱樣行為</td></tr>
+  </table></div>
+  <div class="prose"><p>此外，在癲癇模型動物中用黃光壓制失控同步放電的神經元，發作當場終止。2010 年，《Nature Methods》將光遺傳學選為年度方法。</p></div>
+</section>
+
+<!-- 臨床 -->
+<section id="s8">
+  <div class="sec-head"><span class="no">08</span><h2>走向病床：視網膜的曙光</h2></div>
+  <div class="prose flow">
+    <p>光遺傳學在實驗室已經成熟，在醫院則剛起步。眼睛是最早的突破口：它本來就接收光，眼內免疫反應較溫和，體積小，需要的病毒劑量也少。</p>
+    <p>2021 年，《Nature Medicine》報告一位<button class="kw" data-k="rp">視網膜色素變性</button>患者。研究者以腺相關病毒（AAV）把紅移光敏蛋白 ChrimsonR 送進仍存活的視網膜神經節細胞，再讓患者戴上特製眼鏡，把影像轉成這個蛋白能回應的光訊號。</p>
+  </div>
+  <figure>
+    <div class="figwrap"><svg viewBox="0 0 760 260" role="img" aria-label="視網膜光遺傳治療示意圖">
+      <g font-size="12.5">
+      <g transform="translate(30,30)">
+        <rect x="0" y="70" width="130" height="50" rx="20" class="f-ink3"/>
+        <rect x="12" y="80" width="106" height="30" rx="12" class="f-rs"/>
+        <text x="65" y="148" text-anchor="middle" class="t2">特製眼鏡</text>
+        <text x="65" y="166" text-anchor="middle" class="t3" font-size="11.5">把影像轉成強光訊號</text>
+        <polygon points="130,82 250,60 250,130 130,108" class="f-red" opacity=".3"/>
+      </g>
+      <g transform="translate(250,20)">
+        <circle cx="120" cy="110" r="100" class="f-bg s-ink" stroke-width="2"/>
+        <ellipse cx="34" cy="110" rx="16" ry="34" class="f-surf s-ink"/>
+        <path d="M200 30 A 100 100 0 0 1 200 190" class="s-red f-none" stroke-width="10" opacity=".55"/>
+        <text x="120" y="230" text-anchor="middle" class="t2">眼球</text>
+      </g>
+      <g transform="translate(500,20)">
+        <rect width="240" height="210" rx="10" class="f-surf s-line"/>
+        <text x="120" y="24" text-anchor="middle" font-weight="700">視網膜放大</text>
+        <text x="16" y="56" class="t3" font-size="11.5">光進入方向 →</text>
+        <g transform="translate(16,74)">
+          <g class="f-red s-red"><circle cx="20" cy="14" r="10"/><circle cx="60" cy="14" r="10"/><circle cx="100" cy="14" r="10"/></g>
+          <text x="128" y="18" class="tr" font-size="12">神經節細胞＋光敏蛋白</text>
+          <g class="f-gs s-algae"><rect x="10" y="44" width="20" height="26" rx="4"/><rect x="50" y="44" width="20" height="26" rx="4"/><rect x="90" y="44" width="20" height="26" rx="4"/></g>
+          <text x="128" y="62" class="t2" font-size="12">雙極細胞（存活）</text>
+          <g class="s-ink" stroke-width="2"><path d="M12 92 l16 16 M28 92 l-16 16 M52 92 l16 16 M68 92 l-16 16 M92 92 l16 16 M108 92 l-16 16"/></g>
+          <text x="128" y="106" class="t2" font-size="12">感光細胞（已死亡）</text>
+        </g>
+      </g>
+      </g>
+    </svg></div>
+    <figcaption><b>FIG 11</b>繞過死亡的感光細胞，讓仍存活的神經節細胞變成新的「感光細胞」。結果是部分視覺恢復：能找到、數出並拿取桌上物品，但不是正常視力。</figcaption>
+  </figure>
+  <div class="cards">
+    <div class="card"><h3>基因遞送</h3><p>要用病毒把外來基因送進人腦特定細胞，又不引發免疫攻擊。</p></div>
+    <div class="card"><h3>光學硬體</h3><p>要把光安全地送到深部腦區，意味著植入裝置與開顱手術。</p></div>
+    <div class="card"><h3>長期安全</h3><p>神經元終身表現藻類蛋白是否安全，需要數十年追蹤。</p></div>
+  </div>
+  <div class="prose flow">
+    <p>對憂鬱症、思覺失調、帕金森氏症，光遺傳學目前的貢獻主要是<strong>理解疾病的迴路</strong>，而不是直接治療病人。另一個發展方向是德國哥廷根團隊的光學人工耳蝸。還要記得：用強光逼迫大量神經元同步放電，只能證明迴路「足以」產生行為，不等於大腦在自然狀態下就這樣運作。</p>
+  </div>
+</section>
+
+<!-- 反思 -->
+<section id="s9">
+  <div class="sec-head"><span class="no">09</span><h2>科學家的反思</h2></div>
+  <div class="cards">
+    <div class="card"><h3>功勞屬於整條接力</h3><p>諾貝爾獎每項最多三人。2005 年論文的 Boyden、張鋒、Bamberg，以及最早嘗試光控神經元的 Miesenböck 都未入選，多人曾共享 2013 年腦科學獎。</p></div>
+    <div class="card"><h3>記憶與自我</h3><p>小鼠的恐懼記憶已能被重新喚起。若有一天能刪除人的創傷記憶，那個「我」還是原來的我嗎？</p></div>
+    <div class="card"><h3>治療與增強</h3><p>恢復視覺是治療；用同樣技術提升健康人的專注力或控制慾望，還算治療嗎？</p></div>
+    <div class="card"><h3>動物實驗 3R</h3><p>這些因果證據建立在大量基因改造小鼠上，需以替代、減量、精緻化原則檢視。</p></div>
+  </div>
+  <div class="prose flow">
+    <p>光遺傳學不是讀心術，也沒有找到「快樂開關」。它研究的是複雜迴路中的因果關係。而它最動人的地方，是起點：1990 年代，若有人問 Hegemann「研究綠藻為什麼游向光」有什麼用，他很難給出醫學答案。正是這個問題，打開了探究人類心智的大門。</p>
+  </div>
+</section>
+
+<!-- 闖關 -->
+<section id="quiz">
+  <div class="sec-head"><span class="no">闖關</span><h2>八題觀念檢查</h2></div>
+  <div class="prose"><p>每題選一個答案，立即看到解析。答錯的題目會記錄對應的迷思，最後產生診斷。</p></div>
+  <div class="quiz" id="quizBox"></div>
+  <div class="score">
+    <div><span class="big" id="scoreNum">0 / 8</span><div style="font-size:13.5px;color:var(--ink3)">已答題目的正確數</div></div>
+    <button class="btn ghost" id="resetBtn" type="button">清除作答，重新開始</button>
+  </div>
+  <div class="diag" id="diag"></div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="no">來源</span><h2>延伸閱讀</h2></div>
+  <ul class="refs">
+    <li><a href="https://www.nobelprize.org/prizes/medicine/2026/press-release/">諾貝爾獎官方新聞稿</a>、<a href="https://www.nobelprize.org/prizes/medicine/2026/popular-information/">Popular information</a></li>
+    <li><a href="https://news.ki.se/the-2026-nobel-prize-in-physiology-or-medicine-to-peter-hegemann-georg-nagel-and-karl-deisseroth">Karolinska Institutet 新聞</a>、<a href="https://news.stanford.edu/stories/2026/10/karl-deisseroth-nobel-prize-physiology-medicine">Stanford Report</a>、<a href="https://www.mpg.de/27014852/congratulations-to-peter-hegemann-and-georg-nagel-on-their-nobel-prize-in-physiology-or-medicine">Max-Planck-Gesellschaft</a></li>
+    <li><a href="https://www.cna.com.tw/news/aopl/202610050264.aspx">中央社：美德 3 學者獲諾貝爾醫學獎</a></li>
+    <li>Nagel et al. 2002, <i>Science</i> 296:2395；Nagel et al. 2003, <i>PNAS</i> 100:13940；Boyden et al. 2005, <i>Nature Neuroscience</i> 8:1263；Zhang et al. 2007, <i>Nature</i> 446:633；Sahel et al. 2021, <i>Nature Medicine</i> 27:1223</li>
+  </ul>
+</section>
+</main>
+<footer><div class="wrap">臺北市立麗山高中生物科林獻升老師　2026 諾貝爾生醫獎時事教材｜圖解為示意圖，未依實際比例繪製。</div></footer>
+<div id="tip" role="tooltip" hidden></div>
+
+<script>
+(function(){
+// 主題切換
+var root=document.documentElement;
+try{var t=localStorage.getItem('opto-theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
+document.getElementById('themeBtn').addEventListener('click',function(){
+  var cur=root.getAttribute('data-theme');
+  if(!cur){cur=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+  var nx=cur==='dark'?'light':'dark';root.setAttribute('data-theme',nx);
+  try{localStorage.setItem('opto-theme',nx);}catch(e){}
+});
+
+// 關鍵字解說
+var G={
+ mp:['膜電位','細胞膜內外的電位差。神經元靜止時膜內較負，約 −70 mV。'],
+ th:['閾值電位','約 −50 mV。膜電位越過這條線，電位敏感型鈉離子通道全面開啟，產生動作電位。'],
+ ap:['動作電位','神經元的電訊號，遵守全有全無律：一旦產生，大小固定，只持續數毫秒。'],
+ corr:['相關','兩件事同時發生，不代表其中一件造成另一件。'],
+ cause:['因果','主動改變 A，B 隨之改變，且排除其他可能，才能說 A 造成 B。'],
+ chlamy:['萊茵衣藻','Chlamydomonas reinhardtii。單細胞綠藻，有兩根鞭毛與眼點，常用於研究趨光性與光合作用。'],
+ eyespot:['眼點','衣藻細胞上橙紅色的感光構造，通道視紫紅質就分布在附近的細胞膜上。'],
+ retinal:['視網醛','由維生素 A（視網醇）轉變而來的感光色素。與視蛋白結合成視紫素；ChR2 也靠它吸光。'],
+ rho:['視紫素','rhodopsin。人眼視桿細胞的感光物質，由視網醛與視蛋白組成，經 G 蛋白串聯反應作用。'],
+ oocyte:['非洲爪蟾卵母細胞','體積大、容易注射 RNA，本身幾乎不干擾量測，是測試外來膜蛋白功能的標準平台。'],
+ gated:['閘控通道','可以受調控而開關的離子通道。課本分為電位敏感型與化學敏感型；ChR2 是光敏感型。'],
+ depol:['去極化','膜電位往正的方向變化（變得較不負），通常由陽離子流入造成。'],
+ lenti:['慢病毒','lentivirus。可把外來基因帶進不分裂的神經元；2005 年實驗用它送入 ChR2。後來活體研究多改用腺相關病毒（AAV）。'],
+ opto:['光遺傳學','optogenetics。用遺傳方法讓特定細胞表現光敏蛋白，再用光在毫秒內控制它們的活動。'],
+ fiber:['光纖','植入腦中的細玻璃纖維，接上雷射或 LED，把光送到深部腦區。'],
+ nphr:['鹵視紫質','halorhodopsin（NpHR）。來自嗜鹽古菌，受黃光驅動把 Cl⁻ 送入細胞，屬主動運輸，使神經元過極化。'],
+ suff:['充分性','開啟某群細胞就能產生行為，代表這群細胞「足以」產生該行為。'],
+ nec:['必要性','關閉某群細胞行為就消失，代表行為「需要」這群細胞。'],
+ rp:['視網膜色素變性','遺傳性視網膜疾病，感光細胞逐漸死亡，但其他視網膜神經細胞多半仍存活。']
+};
+var tip=document.getElementById('tip');
+function show(el){var g=G[el.dataset.k];if(!g)return;tip.innerHTML='<b>'+g[0]+'</b>'+g[1];tip.hidden=false;
+  var r=el.getBoundingClientRect(),w=Math.min(300,innerWidth-24);tip.style.maxWidth=w+'px';
+  var x=Math.max(12,Math.min(r.left,innerWidth-w-12)),y=r.bottom+8;
+  tip.style.left=x+'px';tip.style.top=y+'px';
+  var th=tip.offsetHeight;if(y+th>innerHeight-8){tip.style.top=(r.top-th-8)+'px';}}
+document.querySelectorAll('.kw').forEach(function(el){
+  el.type='button';el.setAttribute('aria-label',(G[el.dataset.k]||[''])[0]+'：查看解說');
+  el.addEventListener('mouseenter',function(){show(el)});
+  el.addEventListener('mouseleave',function(){tip.hidden=true});
+  el.addEventListener('focus',function(){show(el)});
+  el.addEventListener('blur',function(){tip.hidden=true});
+  el.addEventListener('click',function(e){e.stopPropagation();show(el)});
+});
+document.addEventListener('click',function(){tip.hidden=true});
+addEventListener('scroll',function(){tip.hidden=true},{passive:true});
+
+// 章節軌道
+var chips=[].slice.call(document.querySelectorAll('#chips a'));
+var secs=chips.map(function(a){return document.querySelector(a.getAttribute('href'))});
+function onScroll(){var y=scrollY+120,idx=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)idx=i});
+  chips.forEach(function(a,i){a.classList.toggle('on',i===idx)});}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// 闖關
+var TAGS={
+ O1:'以為「同一個蛋白藍光開、綠光關」',
+ O2:'以為光本身能挑選細胞，忽略啟動子的角色',
+ O3:'以為刺激越強，單一動作電位越大（忽略全有全無律）',
+ O4:'混淆 ChR2 與人眼視紫素的運作方式',
+ O5:'把觀察到的相關當成因果，或忽略對照組',
+ O6:'誇大臨床現況，以為光遺傳學已能治癒失明或腦疾',
+ O7:'混淆被動運輸（通道）與主動運輸（幫浦）'
+};
+var Q=[
+ {q:'ChR2 能讓神經元「一照光就放電」，最主要的原因是：',o:['光使 ChR2 活化 G 蛋白，再經 cGMP 串聯反應打開鈉通道','ChR2 同時是感光分子與陽離子通道，照光即開啟讓陽離子流入','藍光加熱細胞膜，使膜電位上升','光使細胞內的 K⁺ 大量外流'],a:1,t:['O4','O4','O5','O7'],e:'ChR2 一個分子就完成感光與開門；經 G 蛋白串聯反應的是人眼視紫素。'},
+ {q:'研究者只想讓多巴胺神經元受光控制，最關鍵的設計是：',o:['提高藍光的強度','把光纖插得更深','在 ChR2 基因前接上只在多巴胺神經元啟動的啟動子','在飼料中加大量視網醛'],a:2,t:['O2','O2','','O2'],e:'光本身不挑細胞，選擇性來自細胞類型專一性啟動子。'},
+ {q:'提高藍光閃光頻率時，表現 ChR2 的神經元最可能出現：',o:['動作電位次數增加，單一動作電位大小不變','單一動作電位變得更大','膜電位停在 −50 mV 不動','動作電位次數減少'],a:0,t:['','O3','O3','O3'],e:'動作電位遵守全有全無律，改變的是頻率，不是幅度。'},
+ {q:'某神經元表現 NpHR，照黃光時最可能：',o:['Na⁺ 流入，產生動作電位','Cl⁻ 被送入細胞，膜電位過極化，較難放電','綠光才能讓它關閉','消耗 ATP 把 Cl⁻ 送出細胞'],a:1,t:['O1','','O1','O7'],e:'NpHR 是由光驅動的 Cl⁻ 幫浦（主動運輸），把 Cl⁻ 送進細胞造成過極化。'},
+ {q:'要排除「藍光本身（光或熱）就會改變行為」的可能，應設置哪一組對照？',o:['表現 ChR2 但不照光','不表現 ChR2，但照同樣的藍光','表現 ChR2 並照更強的光','只要重複實驗更多次即可'],a:1,t:['O5','','O5','O5'],e:'不表現 ChR2 卻照同樣的光，若行為不變，就能排除光與熱本身的效應。'},
+ {q:'關於通道視紫紅質與人眼視紫素，下列何者正確？',o:['兩者照光後，視網醛都由 11-順式轉為全反式','人眼視紫素照光後直接讓 Na⁺ 流入','兩者都以視網醛作為感光色素','通道視紫紅質需要 G 蛋白才能開啟'],a:2,t:['O4','O4','','O4'],e:'兩者都是「視網醛＋視蛋白」，但 ChR2 由全反式轉為 13-順式且本身就是通道。'},
+ {q:'Hegemann 推論「感光蛋白本身就是離子通道」，最主要的證據是：',o:['衣藻有兩根鞭毛','光照後細胞膜在不到一毫秒內就出現電流','衣藻含有葉綠體','衣藻會游向光'],a:1,t:['O5','','O5','O5'],e:'反應快到不可能經過多步驟訊息傳遞，因此推論感光與通道是同一個蛋白。'},
+ {q:'關於光遺傳學的臨床現況，下列何者正確？',o:['已是憂鬱症的常規療法','2021 年的案例讓失明患者完全恢復正常視力','眼睛較早嘗試，原因之一是它本來就接收光','用在人腦不需病毒也不需植入光源'],a:2,t:['O6','O6','','O6'],e:'2021 年案例是部分視覺恢復；人腦應用仍有基因遞送、光學硬體、長期安全三道門檻。'}
+];
+var KEY='opto-2026.v1',ST={};
+try{ST=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){ST={};}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(ST));}catch(e){}}
+var box=document.getElementById('quizBox');
+function render(){
+  box.innerHTML='';
+  Q.forEach(function(it,i){
+    var d=document.createElement('div');d.className='q';
+    d.innerHTML='<div class="qn">第 '+(i+1)+' 題</div><h3>'+it.q+'</h3><div class="opts"></div><div class="fb" aria-live="polite"></div>';
+    var opts=d.querySelector('.opts'),fb=d.querySelector('.fb'),ans=ST[i];
+    it.o.forEach(function(txt,j){
+      var b=document.createElement('button');b.type='button';b.className='opt';
+      b.innerHTML='<span class="k">'+'ABCD'[j]+'</span><span>'+txt+'</span>';
+      if(ans!==undefined){b.disabled=true;if(j===it.a)b.classList.add('right');if(j===ans&&ans!==it.a)b.classList.add('wrong');}
+      b.addEventListener('click',function(){ST[i]=j;save();render();});
+      opts.appendChild(b);
+    });
+    if(ans!==undefined){fb.innerHTML=(ans===it.a?'<b class="ok">答對了。</b>':'<b class="no">再想想。</b>正確答案是 '+'ABCD'[it.a]+'。')+it.e;}
+    box.appendChild(d);
+  });
+  var right=0,tags={};
+  Q.forEach(function(it,i){if(ST[i]===undefined)return;if(ST[i]===it.a)right++;else{var tg=it.t[ST[i]];if(tg)tags[tg]=(tags[tg]||0)+1;}});
+  document.getElementById('scoreNum').textContent=right+' / '+Q.length;
+  var dg=document.getElementById('diag');dg.innerHTML='';
+  Object.keys(tags).forEach(function(k){var x=document.createElement('div');x.textContent='需要再釐清：'+TAGS[k]+'（'+tags[k]+' 題）';dg.appendChild(x);});
+}
+render();
+document.getElementById('resetBtn').addEventListener('click',function(){ST={};save();render();});
+})();
+</script>
+
+</body></html>

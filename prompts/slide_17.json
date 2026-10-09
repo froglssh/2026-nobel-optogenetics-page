@@ -1,0 +1,44 @@
+{
+  "slide": 17,
+  "title": "評量解析（一）：全有全無律與被動運輸的嚴謹界定",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Traditional Chinese\",\n  \"slide_number\": 17,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n面向高中選修生物與諾貝爾獎時事科普的高品質全圖像化教學簡報，清晰闡述分子機制、實驗因果與生命倫理\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"2026 年諾貝爾生理醫學獎授予 Peter Hegemann、Georg Nagel 與 Karl Deisseroth，表彰他們發現光閘控離子通道並開創光遺傳學。本教案由臺北市立麗山高中生物科林獻升老師編撰，適用於高一必修生物與高二/高三選修生物 I 與 III。\",\n    \"core_claim\": \"光遺傳學整合微藻光生物物理、基因工程與電生理學，賦予科學家以毫秒時間精度與單細胞空間專一性操縱大腦神經迴路的能力，使神經科學研究由『觀察相關』跨越至『驗證因果』。\",\n    \"canonical_terms\": [\n      \"通道視紫紅質-2 (ChR2)\",\n      \"鹵視紫質 (NpHR)\",\n      \"全反式視網醛\",\n      \"去極化\",\n      \"過極化\",\n      \"動作電位\",\n      \"細胞專一性啟動子\",\n      \"慢病毒載體\",\n      \"3R 原則\"\n    ]\n  },\n  \"slide_local_context\": \"選修生物 III 動作電位頻率編碼特性，大考必考概念解析\"\n}\n\n## Global Style\n{\n  \"name\": \"清爽專業風\",\n  \"visual_direction\": \"clean modern scientific presentation, crisp light gray/warm white background, deep navy title and structure, cyan blue laser/ChR2 accents, amber NpHR accents, card-based layout, elegant Traditional Chinese typography\",\n  \"color_palette\": {\n    \"background\": \"#F8FAFC\",\n    \"primary\": \"#0F172A\",\n    \"secondary\": \"#2563EB\",\n    \"cyan_accent\": \"#0284C7\",\n    \"amber_accent\": \"#F59E0B\",\n    \"green_accent\": \"#059669\"\n  },\n  \"typography\": \"clear bold sans-serif, authoritative, Traditional Chinese (繁體中文)\",\n  \"density\": \"medium information density, clear hierarchy, card layout\"\n}\n\n## Slide\n{\n  \"number\": 17,\n  \"title\": \"評量解析（一）：全有全無律與被動運輸的嚴謹界定\",\n  \"role\": null,\n  \"intent\": null\n}\n\n## Text\n{\n  \"title\": \"評量解析（一）：全有全無律與被動運輸的嚴謹界定\",\n  \"key_points\": [\n    \"第 1 題解析：ChR2 為陽離子通道，離子順電化學梯度移動為被動運輸（促進性擴散）；哺乳類體內自備視網醛\",\n    \"第 2 題解析：光照頻率增加會提高動作電位發放頻率，但單一動作電位振幅固定（全有全無律）\",\n    \"致命迷思破除：強光不會讓單個動作電位衝得更高！神經編碼靠「頻率」而非「振幅」傳遞訊號強度\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"role\": \"data evidence\",\n  \"intent\": \"題解頁，紅綠標籤標記正誤，右側附電生理曲線圖解破除迷思\",\n  \"composition\": \"左側為選項剖析卡片，右側為光強度增強對應動作電位頻率變密、振幅不變的示波器圖\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"示波器記錄圖：弱光脈衝（單個尖峰）vs 強光脈衝（密集尖峰，峰高相同）\",\n  \"supporting_elements\": \"迷思警示標籤、正確答案強調卡（答案：1.C / 2.B）\"\n}\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_17.png",
+  "candidate_out": "drafts/slide_17_candidate.png",
+  "input_images": [],
+  "style_reference_images": [],
+  "requires_context_images": false,
+  "expected_generation_mode": "generate",
+  "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "model": "gpt-image-2",
+    "size": "2048x1152",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/origin_image/slide_10.png",
+    "handoff_rule": "subagents must use the same backend/tool/config; use generate for new slides"
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "default_mode": "generate",
+    "use_edit_only_when": [
+      "input_images is non-empty",
+      "repairing an existing generated slide"
+    ],
+    "must_inspect_style_reference_images": false,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

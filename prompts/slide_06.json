@@ -1,0 +1,44 @@
+{
+  "slide": 6,
+  "title": "綠藻的啟發：演化數億年的「全合一」感光開關",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Traditional Chinese\",\n  \"slide_number\": 6,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n面向高中選修生物與諾貝爾獎時事科普的高品質全圖像化教學簡報，清晰闡述分子機制、實驗因果與生命倫理\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"2026 年諾貝爾生理醫學獎授予 Peter Hegemann、Georg Nagel 與 Karl Deisseroth，表彰他們發現光閘控離子通道並開創光遺傳學。本教案由臺北市立麗山高中生物科林獻升老師編撰，適用於高一必修生物與高二/高三選修生物 I 與 III。\",\n    \"core_claim\": \"光遺傳學整合微藻光生物物理、基因工程與電生理學，賦予科學家以毫秒時間精度與單細胞空間專一性操縱大腦神經迴路的能力，使神經科學研究由『觀察相關』跨越至『驗證因果』。\",\n    \"canonical_terms\": [\n      \"通道視紫紅質-2 (ChR2)\",\n      \"鹵視紫質 (NpHR)\",\n      \"全反式視網醛\",\n      \"去極化\",\n      \"過極化\",\n      \"動作電位\",\n      \"細胞專一性啟動子\",\n      \"慢病毒載體\",\n      \"3R 原則\"\n    ]\n  },\n  \"slide_local_context\": \"基礎生物學好奇心驅動研究的最佳典範，解答微藻如何感知光環境\"\n}\n\n## Global Style\n{\n  \"name\": \"清爽專業風\",\n  \"visual_direction\": \"clean modern scientific presentation, crisp light gray/warm white background, deep navy title and structure, cyan blue laser/ChR2 accents, amber NpHR accents, card-based layout, elegant Traditional Chinese typography\",\n  \"color_palette\": {\n    \"background\": \"#F8FAFC\",\n    \"primary\": \"#0F172A\",\n    \"secondary\": \"#2563EB\",\n    \"cyan_accent\": \"#0284C7\",\n    \"amber_accent\": \"#F59E0B\",\n    \"green_accent\": \"#059669\"\n  },\n  \"typography\": \"clear bold sans-serif, authoritative, Traditional Chinese (繁體中文)\",\n  \"density\": \"medium information density, clear hierarchy, card layout\"\n}\n\n## Slide\n{\n  \"number\": 6,\n  \"title\": \"綠藻的啟發：演化數億年的「全合一」感光開關\",\n  \"role\": null,\n  \"intent\": null\n}\n\n## Text\n{\n  \"title\": \"綠藻的啟發：演化數億年的「全合一」感光開關\",\n  \"key_points\": [\n    \"單細胞綠藻（衣藻）為什麼會游泳游向光源？演化出趨光性以優化光合作用\",\n    \"眼點（Eyespot）上的通道視紫紅質（Channelrhodopsin）：集「感光」與「離子通透」於一身\",\n    \"赫吉曼的大膽直覺：動物視網膜需複雜 G 蛋白串聯放大，藻類卻只需一個蛋白直接開門！\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"role\": \"concept\",\n  \"intent\": \"介紹大自然在單細胞生物中演化出的單分子感光通道\",\n  \"composition\": \"左側為綠藻細胞顯微與眼點結構，右側為通道視紫紅質全合一分子示意\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"衣藻顯微結構圖，標記眼點與雙鞭毛，受光後離子流動引發轉向\",\n  \"supporting_elements\": \"光束照射眼點箭頭、感光蛋白簡化示意、生物學註記卡片\"\n}\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_06.png",
+  "candidate_out": "drafts/slide_06_candidate.png",
+  "input_images": [],
+  "style_reference_images": [],
+  "requires_context_images": false,
+  "expected_generation_mode": "generate",
+  "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "model": "gpt-image-2",
+    "size": "2048x1152",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/origin_image/slide_10.png",
+    "handoff_rule": "subagents must use the same backend/tool/config; use generate for new slides"
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "default_mode": "generate",
+    "use_edit_only_when": [
+      "input_images is non-empty",
+      "repairing an existing generated slide"
+    ],
+    "must_inspect_style_reference_images": false,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

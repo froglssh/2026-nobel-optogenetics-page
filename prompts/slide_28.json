@@ -1,0 +1,44 @@
+{
+  "slide": 28,
+  "title": "科學本質與榮耀：3R 原則與被遺漏的貢獻者",
+  "prompt": "# Codex PPT Slide Image Prompt\n\n## Canvas\n{\n  \"type\": \"16:9 full-slide PowerPoint image\",\n  \"language\": \"Traditional Chinese\",\n  \"slide_number\": 28,\n  \"render_slide_number\": false\n}\n\n## Deck Goal\n面向高中選修生物與諾貝爾獎時事科普的高品質全圖像化教學簡報，清晰闡述分子機制、實驗因果與生命倫理\n\n## Required Background\n{\n  \"deck_context\": {\n    \"source_summary\": \"2026 年諾貝爾生理醫學獎授予 Peter Hegemann、Georg Nagel 與 Karl Deisseroth，表彰他們發現光閘控離子通道並開創光遺傳學。本教案由臺北市立麗山高中生物科林獻升老師編撰，適用於高一必修生物與高二/高三選修生物 I 與 III。\",\n    \"core_claim\": \"光遺傳學整合微藻光生物物理、基因工程與電生理學，賦予科學家以毫秒時間精度與單細胞空間專一性操縱大腦神經迴路的能力，使神經科學研究由『觀察相關』跨越至『驗證因果』。\",\n    \"canonical_terms\": [\n      \"通道視紫紅質-2 (ChR2)\",\n      \"鹵視紫質 (NpHR)\",\n      \"全反式視網醛\",\n      \"去極化\",\n      \"過極化\",\n      \"動作電位\",\n      \"細胞專一性啟動子\",\n      \"慢病毒載體\",\n      \"3R 原則\"\n    ]\n  },\n  \"slide_local_context\": \"教材第七節科學社群與 3R 原則，引導學生客觀看待諾貝爾獎與科學史接力\"\n}\n\n## Global Style\n{\n  \"name\": \"清爽專業風\",\n  \"visual_direction\": \"clean modern scientific presentation, crisp light gray/warm white background, deep navy title and structure, cyan blue laser/ChR2 accents, amber NpHR accents, card-based layout, elegant Traditional Chinese typography\",\n  \"color_palette\": {\n    \"background\": \"#F8FAFC\",\n    \"primary\": \"#0F172A\",\n    \"secondary\": \"#2563EB\",\n    \"cyan_accent\": \"#0284C7\",\n    \"amber_accent\": \"#F59E0B\",\n    \"green_accent\": \"#059669\"\n  },\n  \"typography\": \"clear bold sans-serif, authoritative, Traditional Chinese (繁體中文)\",\n  \"density\": \"medium information density, clear hierarchy, card layout\"\n}\n\n## Slide\n{\n  \"number\": 28,\n  \"title\": \"科學本質與榮耀：3R 原則與被遺漏的貢獻者\",\n  \"role\": null,\n  \"intent\": null\n}\n\n## Text\n{\n  \"title\": \"科學本質與榮耀：3R 原則與被遺漏的貢獻者\",\n  \"key_points\": [\n    \"動物實驗福祉：3R 原則（Replacement 替代、Reduction 減量、Refinement 精緻化）在腦科學中的具體落實\",\n    \"科學是一場漫長接力：諾貝爾獎每項至多頒給 3 人，但重大突破仰賴整個研究團隊\",\n    \"致敬先驅：Edward Boyden、張鋒（Feng Zhang）、Ernst Bamberg、Gero Miesenböck 等科學家的卓越貢獻\"\n  ],\n  \"speaker_focus\": null\n}\n\n## Layout\n{\n  \"role\": \"timeline\",\n  \"intent\": \"探討科學社群運作、科研倫理與團隊合作的真實樣貌\",\n  \"composition\": \"左側為動物福祉 3R 原則卡片，右側為科學團隊合作與歷史貢獻者長廊\"\n}\n\n## Visual Elements\n{\n  \"main_visual\": \"接力火炬圖標與合作網絡圖，突顯科學共同體的集體智慧\",\n  \"supporting_elements\": \"3R 綠色盾牌徽章、未獲獎關鍵貢獻者名錄卡片\"\n}\n\n## Universal Constraints\n- The final image itself must contain the title and key points.\n- Render Chinese text exactly and legibly; avoid garbled characters.\n- Keep the confirmed deck style consistent while varying layout by slide role.\n- No watermark, unrelated logo, or extra slide number.\n",
+  "out": "slide_28.png",
+  "candidate_out": "drafts/slide_28_candidate.png",
+  "input_images": [],
+  "style_reference_images": [],
+  "requires_context_images": false,
+  "expected_generation_mode": "generate",
+  "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "model": "gpt-image-2",
+    "size": "2048x1152",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/origin_image/slide_10.png",
+    "handoff_rule": "subagents must use the same backend/tool/config; use generate for new slides"
+  },
+  "generation_contract": {
+    "must_use_selected_image_backend": true,
+    "must_match_sample_generation_method": true,
+    "default_mode": "generate",
+    "use_edit_only_when": [
+      "input_images is non-empty",
+      "repairing an existing generated slide"
+    ],
+    "must_inspect_style_reference_images": false,
+    "forbidden_final_image_methods": [
+      "local drawing/rendering scripts",
+      "Pillow-generated slides",
+      "SVG/HTML/CSS/canvas screenshots",
+      "python-pptx/PptxGenJS/native PPT layout screenshots",
+      "manually composited text/image overlays"
+    ],
+    "must_return": [
+      "backend_used",
+      "selected_source",
+      "qa_note"
+    ]
+  }
+}

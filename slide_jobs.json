@@ -1,0 +1,1081 @@
+{
+  "run_status": "slides_recorded",
+  "deck_name": "光遺傳學_教師版教學簡報_codex-ppt",
+  "selected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+  "sample_generation_method": {
+    "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+    "tool_name": "scripts/image_gen.py",
+    "mode": "generate",
+    "model": "gpt-image-2",
+    "size": "2048x1152",
+    "quality": "medium",
+    "approved_sample_path": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/origin_image/slide_10.png",
+    "handoff_rule": "subagents must use the same backend/tool/config; use generate for new slides"
+  },
+  "max_concurrent_slides": 6,
+  "slides": [
+    {
+      "slide_id": "slide_01",
+      "number": 1,
+      "title": "一束光，如何讓神經元聽指令？",
+      "job": "prompts/slide_01.json",
+      "out": "origin_image/slide_01.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-01",
+        "agent_nickname": "Slide 01 Worker",
+        "prompt": "prompts/slide_01.json",
+        "prompt_sha256": "1162baae663eb7ae5c0abd5ce2775cd6583d669fb1e901ae66e793296a2c755e",
+        "dispatched_at": "2026-10-09T10:20:45Z"
+      },
+      "result": {
+        "agent_id": "worker-01",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_01_candidate.png",
+        "selected_source_sha256": "a9afe84288c26db14d6d1208b85f82d82b735800a58f190651eecccd8ebdec3c",
+        "final_image": "origin_image/slide_01.png",
+        "final_image_sha256": "a9afe84288c26db14d6d1208b85f82d82b735800a58f190651eecccd8ebdec3c",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:45Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_02",
+      "number": 2,
+      "title": "學習目標：今天我們要解開的三個核心謎題",
+      "job": "prompts/slide_02.json",
+      "out": "origin_image/slide_02.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-02",
+        "agent_nickname": "Slide 02 Worker",
+        "prompt": "prompts/slide_02.json",
+        "prompt_sha256": "d86095ff7dea26a9a22727d368ac58da3db71fa5142841225e20e6e1ef826d2a",
+        "dispatched_at": "2026-10-09T10:20:45Z"
+      },
+      "result": {
+        "agent_id": "worker-02",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_02_candidate.png",
+        "selected_source_sha256": "48ad6fc60d262b35a7097188e0342837d11d6ea4c66b2dd8eac256b5f7168ad1",
+        "final_image": "origin_image/slide_02.png",
+        "final_image_sha256": "48ad6fc60d262b35a7097188e0342837d11d6ea4c66b2dd8eac256b5f7168ad1",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:45Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_03",
+      "number": 3,
+      "title": "先備知識銜接：高中生物的核心基石",
+      "job": "prompts/slide_03.json",
+      "out": "origin_image/slide_03.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-03",
+        "agent_nickname": "Slide 03 Worker",
+        "prompt": "prompts/slide_03.json",
+        "prompt_sha256": "c8def10162a2ef39ea7a89984e2fa704fedeb0e7733029d01fba2a27aa760668",
+        "dispatched_at": "2026-10-09T10:20:46Z"
+      },
+      "result": {
+        "agent_id": "worker-03",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_03_candidate.png",
+        "selected_source_sha256": "c9b1d66f770d768b2e7f0500f0378fe5a19d00d4b34fe4d549f83fb39de57859",
+        "final_image": "origin_image/slide_03.png",
+        "final_image_sha256": "c9b1d66f770d768b2e7f0500f0378fe5a19d00d4b34fe4d549f83fb39de57859",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_04",
+      "number": 4,
+      "title": "2026 諾貝爾桂冠：三位科學家的跨領域接力",
+      "job": "prompts/slide_04.json",
+      "out": "origin_image/slide_04.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-04",
+        "agent_nickname": "Slide 04 Worker",
+        "prompt": "prompts/slide_04.json",
+        "prompt_sha256": "65e5c805cdd7ff44856fd602a4615c6e523ce3ab5b366a0d1895b2af5dadbb01",
+        "dispatched_at": "2026-10-09T10:20:46Z"
+      },
+      "result": {
+        "agent_id": "worker-04",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_04_candidate.png",
+        "selected_source_sha256": "deaa695094afda0916a301c86ac35f8fac8e1c2a79b4a19248fc9729bd94bebc",
+        "final_image": "origin_image/slide_04.png",
+        "final_image_sha256": "deaa695094afda0916a301c86ac35f8fac8e1c2a79b4a19248fc9729bd94bebc",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:46Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_05",
+      "number": 5,
+      "title": "腦科學的百年困境：電刺激與藥物治療的兩難",
+      "job": "prompts/slide_05.json",
+      "out": "origin_image/slide_05.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-05",
+        "agent_nickname": "Slide 05 Worker",
+        "prompt": "prompts/slide_05.json",
+        "prompt_sha256": "c08664f4d65fa4b66b08aa796aaa9a7512cbeeb993d90602b5d04c06806f63ff",
+        "dispatched_at": "2026-10-09T10:20:46Z"
+      },
+      "result": {
+        "agent_id": "worker-05",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_05_candidate.png",
+        "selected_source_sha256": "b0b1e2ab99057516aa076b0b83b49fa53ef1cce26397bf93511c656953b6eb2d",
+        "final_image": "origin_image/slide_05.png",
+        "final_image_sha256": "b0b1e2ab99057516aa076b0b83b49fa53ef1cce26397bf93511c656953b6eb2d",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:47Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_06",
+      "number": 6,
+      "title": "綠藻的啟發：演化數億年的「全合一」感光開關",
+      "job": "prompts/slide_06.json",
+      "out": "origin_image/slide_06.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-06",
+        "agent_nickname": "Slide 06 Worker",
+        "prompt": "prompts/slide_06.json",
+        "prompt_sha256": "6d2f96d7e25b8c436a989e35c5003683025c922c898ecaf4494d8478516a4857",
+        "dispatched_at": "2026-10-09T10:20:47Z"
+      },
+      "result": {
+        "agent_id": "worker-06",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_06_candidate.png",
+        "selected_source_sha256": "65b3440a304c5c32769004b7aacc71c12ebef28b820512550b2ea1ea0e2a4526",
+        "final_image": "origin_image/slide_06.png",
+        "final_image_sha256": "65b3440a304c5c32769004b7aacc71c12ebef28b820512550b2ea1ea0e2a4526",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:47Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_07",
+      "number": 7,
+      "title": "跨物種驗證：Nagel 2003 的決定性電生理實驗",
+      "job": "prompts/slide_07.json",
+      "out": "origin_image/slide_07.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-07",
+        "agent_nickname": "Slide 07 Worker",
+        "prompt": "prompts/slide_07.json",
+        "prompt_sha256": "1b0faa6db9434b38403805dc3bfd5c7ce45e1bc3b39a25e838b8e5743c90622c",
+        "dispatched_at": "2026-10-09T10:20:47Z"
+      },
+      "result": {
+        "agent_id": "worker-07",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_07_candidate.png",
+        "selected_source_sha256": "c2d1437cc6125777bbd5e5e04f6dedc49a46c6dfdd583457ac5f2c2cfbe193b6",
+        "final_image": "origin_image/slide_07.png",
+        "final_image_sha256": "c2d1437cc6125777bbd5e5e04f6dedc49a46c6dfdd583457ac5f2c2cfbe193b6",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:47Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_08",
+      "number": 8,
+      "title": "神經工程化：Boyden & Deisseroth 2005 點亮大腦",
+      "job": "prompts/slide_08.json",
+      "out": "origin_image/slide_08.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-08",
+        "agent_nickname": "Slide 08 Worker",
+        "prompt": "prompts/slide_08.json",
+        "prompt_sha256": "9af385536c83cbff3bc7c3fb0427a26d77fb29deaed3cf962b2e873446d52688",
+        "dispatched_at": "2026-10-09T10:20:48Z"
+      },
+      "result": {
+        "agent_id": "worker-08",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_08_candidate.png",
+        "selected_source_sha256": "bdafc036abfcfa1edd5311b9378c8ee85cfd54351a85e8550c935032e3926137",
+        "final_image": "origin_image/slide_08.png",
+        "final_image_sha256": "bdafc036abfcfa1edd5311b9378c8ee85cfd54351a85e8550c935032e3926137",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_09",
+      "number": 9,
+      "title": "基因門禁卡：如何只讓目標神經元表現 ChR2？",
+      "job": "prompts/slide_09.json",
+      "out": "origin_image/slide_09.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-09",
+        "agent_nickname": "Slide 09 Worker",
+        "prompt": "prompts/slide_09.json",
+        "prompt_sha256": "38b767f122d113e1462b3fe0d3fb38a3dc44f2fddd4c1d3987423eeddffb7437",
+        "dispatched_at": "2026-10-09T10:20:48Z"
+      },
+      "result": {
+        "agent_id": "worker-09",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_09_candidate.png",
+        "selected_source_sha256": "de1a865962334bbb440ce0f846fe5d2728ad1e21635bb0689bbc99f546206e3a",
+        "final_image": "origin_image/slide_09.png",
+        "final_image_sha256": "de1a865962334bbb440ce0f846fe5d2728ad1e21635bb0689bbc99f546206e3a",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:48Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_10",
+      "number": 10,
+      "title": "ChR2 分子機制全解析：藍光如何推開離子閘門？",
+      "job": "prompts/slide_10.json",
+      "out": "origin_image/slide_10.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "accepted",
+      "dispatch": null,
+      "result": {
+        "final_image": "origin_image/slide_10.png",
+        "accepted_sample": true
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_11",
+      "number": 11,
+      "title": "踩下神經煞車：NpHR 鹵視紫質與黃光過極化抑制",
+      "job": "prompts/slide_11.json",
+      "out": "origin_image/slide_11.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-11",
+        "agent_nickname": "Slide 11 Worker",
+        "prompt": "prompts/slide_11.json",
+        "prompt_sha256": "187fca2bbee0da913408eca44591eea9ff241363e8bb79401dcbb89a1b435876",
+        "dispatched_at": "2026-10-09T10:20:48Z"
+      },
+      "result": {
+        "agent_id": "worker-11",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_11_candidate.png",
+        "selected_source_sha256": "49190e12dcfcd708de4047744f378af146c57ce18f2d44b06c9d469de32bc928",
+        "final_image": "origin_image/slide_11.png",
+        "final_image_sha256": "49190e12dcfcd708de4047744f378af146c57ce18f2d44b06c9d469de32bc928",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_12",
+      "number": 12,
+      "title": "物質運輸比一比：ChR2 vs NpHR vs 鈉鉀幫浦",
+      "job": "prompts/slide_12.json",
+      "out": "origin_image/slide_12.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-12",
+        "agent_nickname": "Slide 12 Worker",
+        "prompt": "prompts/slide_12.json",
+        "prompt_sha256": "47afff5a8b55051366792533c8128797b0052a4cf9a84ac0b108c619b1da4165",
+        "dispatched_at": "2026-10-09T10:20:49Z"
+      },
+      "result": {
+        "agent_id": "worker-12",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_12_candidate.png",
+        "selected_source_sha256": "dc0f053226b2cadf54773d7dbae9de11df01a9dac0190b67a353732f0665ca42",
+        "final_image": "origin_image/slide_12.png",
+        "final_image_sha256": "dc0f053226b2cadf54773d7dbae9de11df01a9dac0190b67a353732f0665ca42",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_13",
+      "number": 13,
+      "title": "演化與設計：藻類通道視紫紅質 vs 人眼視紫素",
+      "job": "prompts/slide_13.json",
+      "out": "origin_image/slide_13.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-13",
+        "agent_nickname": "Slide 13 Worker",
+        "prompt": "prompts/slide_13.json",
+        "prompt_sha256": "9bf9b0cdd6cfb18bac0a67e3c7c2b6f260d4959142dfbda9f93cb22d10deb5e5",
+        "dispatched_at": "2026-10-09T10:20:49Z"
+      },
+      "result": {
+        "agent_id": "worker-13",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_13_candidate.png",
+        "selected_source_sha256": "3c42e070a8f30dc252a339babf138336f2cb22ad60eeb091ca0ab7bc98bc852b",
+        "final_image": "origin_image/slide_13.png",
+        "final_image_sha256": "3c42e070a8f30dc252a339babf138336f2cb22ad60eeb091ca0ab7bc98bc852b",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_14",
+      "number": 14,
+      "title": "諾貝爾獎跨界聯想：2021 TRPV1 與 2026 ChR2",
+      "job": "prompts/slide_14.json",
+      "out": "origin_image/slide_14.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-14",
+        "agent_nickname": "Slide 14 Worker",
+        "prompt": "prompts/slide_14.json",
+        "prompt_sha256": "c1c2269d1c26e259bbaac19d1677c28df803ec3207e51d20d285e75939ffc34f",
+        "dispatched_at": "2026-10-09T10:20:49Z"
+      },
+      "result": {
+        "agent_id": "worker-14",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_14_candidate.png",
+        "selected_source_sha256": "129e2ef2981ab4943d115ec4f9df64646ebdca4f0a6b54215725bf432a47aebf",
+        "final_image": "origin_image/slide_14.png",
+        "final_image_sha256": "129e2ef2981ab4943d115ec4f9df64646ebdca4f0a6b54215725bf432a47aebf",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:49Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_15",
+      "number": 15,
+      "title": "基礎研究的非凡價值：從綠藻游動到腦醫學革命",
+      "job": "prompts/slide_15.json",
+      "out": "origin_image/slide_15.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-15",
+        "agent_nickname": "Slide 15 Worker",
+        "prompt": "prompts/slide_15.json",
+        "prompt_sha256": "749c23e17930eb9723cf486b093b961fa43fdc7632536537489409a30a49d5ce",
+        "dispatched_at": "2026-10-09T10:20:50Z"
+      },
+      "result": {
+        "agent_id": "worker-15",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_15_candidate.png",
+        "selected_source_sha256": "401e3735beee90c8c0a85206edf48da03044b91fbbcce823e6fb49f1b0988e41",
+        "final_image": "origin_image/slide_15.png",
+        "final_image_sha256": "401e3735beee90c8c0a85206edf48da03044b91fbbcce823e6fb49f1b0988e41",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:50Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_16",
+      "number": 16,
+      "title": "隨堂評量（一）：光閘控通道本質與動作電位特性",
+      "job": "prompts/slide_16.json",
+      "out": "origin_image/slide_16.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-16",
+        "agent_nickname": "Slide 16 Worker",
+        "prompt": "prompts/slide_16.json",
+        "prompt_sha256": "4e4d590754a4f2b70848b6680bad35ed082b301ffcccc7d7ea9e296d862fc59b",
+        "dispatched_at": "2026-10-09T10:20:50Z"
+      },
+      "result": {
+        "agent_id": "worker-16",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_16_candidate.png",
+        "selected_source_sha256": "d032a535793972b08cab143067ed418bf139da9fc8ad2fabeb5ffa5422682ca7",
+        "final_image": "origin_image/slide_16.png",
+        "final_image_sha256": "d032a535793972b08cab143067ed418bf139da9fc8ad2fabeb5ffa5422682ca7",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:50Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_17",
+      "number": 17,
+      "title": "評量解析（一）：全有全無律與被動運輸的嚴謹界定",
+      "job": "prompts/slide_17.json",
+      "out": "origin_image/slide_17.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-17",
+        "agent_nickname": "Slide 17 Worker",
+        "prompt": "prompts/slide_17.json",
+        "prompt_sha256": "047a1de5271e228ca0fd6325f5bdea4c413449e2657ddfd8fc9fd706acce431c",
+        "dispatched_at": "2026-10-09T10:20:50Z"
+      },
+      "result": {
+        "agent_id": "worker-17",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_17_candidate.png",
+        "selected_source_sha256": "1e9498af1bfad6ae01f39d216684baa539b82f21302011a6b2337382b35d54a5",
+        "final_image": "origin_image/slide_17.png",
+        "final_image_sha256": "1e9498af1bfad6ae01f39d216684baa539b82f21302011a6b2337382b35d54a5",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:50Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_18",
+      "number": 18,
+      "title": "隨堂評量（二）：細胞專一性表現與雙光操控原理",
+      "job": "prompts/slide_18.json",
+      "out": "origin_image/slide_18.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-18",
+        "agent_nickname": "Slide 18 Worker",
+        "prompt": "prompts/slide_18.json",
+        "prompt_sha256": "b919671a98b76ac03d3829f671b720d72ec4b9cef7e79053bf0c6ed3c6980c21",
+        "dispatched_at": "2026-10-09T10:20:51Z"
+      },
+      "result": {
+        "agent_id": "worker-18",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_18_candidate.png",
+        "selected_source_sha256": "03f621cbcd642ba812f6854a71c5594d0f2fe5c803aabf6909b43b328d53152e",
+        "final_image": "origin_image/slide_18.png",
+        "final_image_sha256": "03f621cbcd642ba812f6854a71c5594d0f2fe5c803aabf6909b43b328d53152e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:51Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_19",
+      "number": 19,
+      "title": "評量解析（二）：打破「同一蛋白藍開黃關」的直覺陷阱",
+      "job": "prompts/slide_19.json",
+      "out": "origin_image/slide_19.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-19",
+        "agent_nickname": "Slide 19 Worker",
+        "prompt": "prompts/slide_19.json",
+        "prompt_sha256": "f272fd1505bea37c12542e1638680d4d7d09c247fa20647eea4228ac29d14029",
+        "dispatched_at": "2026-10-09T10:20:51Z"
+      },
+      "result": {
+        "agent_id": "worker-19",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_19_candidate.png",
+        "selected_source_sha256": "5a9ba06f204f08583496ad2b55d4702516713467d4ebb2e8baa316e5040d9ac7",
+        "final_image": "origin_image/slide_19.png",
+        "final_image_sha256": "5a9ba06f204f08583496ad2b55d4702516713467d4ebb2e8baa316e5040d9ac7",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:51Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_20",
+      "number": 20,
+      "title": "隨堂評量（三）：臨床治療門檻與視網膜修復案例",
+      "job": "prompts/slide_20.json",
+      "out": "origin_image/slide_20.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-20",
+        "agent_nickname": "Slide 20 Worker",
+        "prompt": "prompts/slide_20.json",
+        "prompt_sha256": "c1298b257f83f6b5b0bff5d8a147afe745ed469c73bf75f5d093d169484d8b31",
+        "dispatched_at": "2026-10-09T10:20:51Z"
+      },
+      "result": {
+        "agent_id": "worker-20",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_20_candidate.png",
+        "selected_source_sha256": "a40c00e31f43a8b50715f60a41f26bd0fa5b0c45a754eddcd76dd12df5225882",
+        "final_image": "origin_image/slide_20.png",
+        "final_image_sha256": "a40c00e31f43a8b50715f60a41f26bd0fa5b0c45a754eddcd76dd12df5225882",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:51Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_21",
+      "number": 21,
+      "title": "探究情境：大腦異常放電與神經群 Y 的因果假說",
+      "job": "prompts/slide_21.json",
+      "out": "origin_image/slide_21.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-21",
+        "agent_nickname": "Slide 21 Worker",
+        "prompt": "prompts/slide_21.json",
+        "prompt_sha256": "b49a4531d80444f2f095c2c52d799955290e9eedc9b14bc06cc558b9bc8cb089",
+        "dispatched_at": "2026-10-09T10:20:51Z"
+      },
+      "result": {
+        "agent_id": "worker-21",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_21_candidate.png",
+        "selected_source_sha256": "a9bba9458a575e57d1d9130868dd2a3db85673f07a290562b9ca3a4aaeef2744",
+        "final_image": "origin_image/slide_21.png",
+        "final_image_sha256": "a9bba9458a575e57d1d9130868dd2a3db85673f07a290562b9ca3a4aaeef2744",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_22",
+      "number": 22,
+      "title": "嚴謹實驗設計：六組對照組的科學邏輯",
+      "job": "prompts/slide_22.json",
+      "out": "origin_image/slide_22.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-22",
+        "agent_nickname": "Slide 22 Worker",
+        "prompt": "prompts/slide_22.json",
+        "prompt_sha256": "e485930079c5eb1b7038c10a2ad238bef8ce3a1f42b3b96989d9574d3110d283",
+        "dispatched_at": "2026-10-09T10:20:52Z"
+      },
+      "result": {
+        "agent_id": "worker-22",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_22_candidate.png",
+        "selected_source_sha256": "4f35141381c91f2ef99b9341794c7c450b2306e0369d111d761db0db7b99121c",
+        "final_image": "origin_image/slide_22.png",
+        "final_image_sha256": "4f35141381c91f2ef99b9341794c7c450b2306e0369d111d761db0db7b99121c",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_23",
+      "number": 23,
+      "title": "表 1 數據解讀：Y 群活化「足以誘發」癲癇發作",
+      "job": "prompts/slide_23.json",
+      "out": "origin_image/slide_23.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-23",
+        "agent_nickname": "Slide 23 Worker",
+        "prompt": "prompts/slide_23.json",
+        "prompt_sha256": "9507f63b379fe6c49d4b30a8de42f4dfe2e474b4879e5f6b2762d8cd249533df",
+        "dispatched_at": "2026-10-09T10:20:52Z"
+      },
+      "result": {
+        "agent_id": "worker-23",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_23_candidate.png",
+        "selected_source_sha256": "b62b5a9e8349de4ec39adf45351685d8954d50fa5229b5ce24f860c0d186cec0",
+        "final_image": "origin_image/slide_23.png",
+        "final_image_sha256": "b62b5a9e8349de4ec39adf45351685d8954d50fa5229b5ce24f860c0d186cec0",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_24",
+      "number": 24,
+      "title": "表 2 數據解讀：NpHR 黃光抑制「顯著終止」發作",
+      "job": "prompts/slide_24.json",
+      "out": "origin_image/slide_24.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-24",
+        "agent_nickname": "Slide 24 Worker",
+        "prompt": "prompts/slide_24.json",
+        "prompt_sha256": "6f179c9050ddc1458b2132ef549766d6e84a1d7fa99213d1ec20fb87ec4a77ca",
+        "dispatched_at": "2026-10-09T10:20:52Z"
+      },
+      "result": {
+        "agent_id": "worker-24",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_24_candidate.png",
+        "selected_source_sha256": "54ce6df482e7597542ee515f21ae29d8b8b7b0b9d8405049a3ea0786babdd3d3",
+        "final_image": "origin_image/slide_24.png",
+        "final_image_sha256": "54ce6df482e7597542ee515f21ae29d8b8b7b0b9d8405049a3ea0786babdd3d3",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:52Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_25",
+      "number": 25,
+      "title": "探究題評析：從數據到結論——科學推論的邊界",
+      "job": "prompts/slide_25.json",
+      "out": "origin_image/slide_25.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-25",
+        "agent_nickname": "Slide 25 Worker",
+        "prompt": "prompts/slide_25.json",
+        "prompt_sha256": "775baee61da2528c11b2f1f7460c5e409f6fb3daa504106bb004892ba2726d08",
+        "dispatched_at": "2026-10-09T10:20:53Z"
+      },
+      "result": {
+        "agent_id": "worker-25",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_25_candidate.png",
+        "selected_source_sha256": "6d6cae225a422d534f383e48d3d37441f495a485df6013d7ec9071efae9ec707",
+        "final_image": "origin_image/slide_25.png",
+        "final_image_sha256": "6d6cae225a422d534f383e48d3d37441f495a485df6013d7ec9071efae9ec707",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:53Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_26",
+      "number": 26,
+      "title": "走向臨床：2021 Nature Medicine 盲人視力部分復原",
+      "job": "prompts/slide_26.json",
+      "out": "origin_image/slide_26.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-26",
+        "agent_nickname": "Slide 26 Worker",
+        "prompt": "prompts/slide_26.json",
+        "prompt_sha256": "a400533598eaae9e858bbda2f0664e2f433850afc4beff15cfdcee24f63adeae",
+        "dispatched_at": "2026-10-09T10:20:53Z"
+      },
+      "result": {
+        "agent_id": "worker-26",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_26_candidate.png",
+        "selected_source_sha256": "1725c8b162a65576ed41adde2a33b753308699f24b5a8af16ddecbdd935f0277",
+        "final_image": "origin_image/slide_26.png",
+        "final_image_sha256": "1725c8b162a65576ed41adde2a33b753308699f24b5a8af16ddecbdd935f0277",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:53Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_27",
+      "number": 27,
+      "title": "生命倫理思辨：如果有一天，能用光「關閉創傷記憶」？",
+      "job": "prompts/slide_27.json",
+      "out": "origin_image/slide_27.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-27",
+        "agent_nickname": "Slide 27 Worker",
+        "prompt": "prompts/slide_27.json",
+        "prompt_sha256": "ef8bf11a7c74256a44384d0cd624782084b7c955224a4c37ef69a25f6ee58416",
+        "dispatched_at": "2026-10-09T10:20:53Z"
+      },
+      "result": {
+        "agent_id": "worker-27",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_27_candidate.png",
+        "selected_source_sha256": "9b2be7de065825caff9261b0613bf5a8ea3ba0686588f7e31bbc8c76cd530771",
+        "final_image": "origin_image/slide_27.png",
+        "final_image_sha256": "9b2be7de065825caff9261b0613bf5a8ea3ba0686588f7e31bbc8c76cd530771",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:53Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_28",
+      "number": 28,
+      "title": "科學本質與榮耀：3R 原則與被遺漏的貢獻者",
+      "job": "prompts/slide_28.json",
+      "out": "origin_image/slide_28.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-28",
+        "agent_nickname": "Slide 28 Worker",
+        "prompt": "prompts/slide_28.json",
+        "prompt_sha256": "10b501d06cc08dafb8f3a0d7e3580c46c83eddeb6d548ffa20e60c475a9018cd",
+        "dispatched_at": "2026-10-09T10:20:54Z"
+      },
+      "result": {
+        "agent_id": "worker-28",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_28_candidate.png",
+        "selected_source_sha256": "2cffb1979cdbe4888ae8e56b462f34c5fe9f4088d5bab6d41be63d3144aaf97e",
+        "final_image": "origin_image/slide_28.png",
+        "final_image_sha256": "2cffb1979cdbe4888ae8e56b462f34c5fe9f4088d5bab6d41be63d3144aaf97e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:54Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_29",
+      "number": 29,
+      "title": "核心統整概念圖：光、基因、電位與大腦因果鏈",
+      "job": "prompts/slide_29.json",
+      "out": "origin_image/slide_29.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-29",
+        "agent_nickname": "Slide 29 Worker",
+        "prompt": "prompts/slide_29.json",
+        "prompt_sha256": "011279b3caf1b816185adddd327281b661e2999b1556d58731082a8c3f2715f3",
+        "dispatched_at": "2026-10-09T10:20:54Z"
+      },
+      "result": {
+        "agent_id": "worker-29",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_29_candidate.png",
+        "selected_source_sha256": "4238c077fd587ce1d3473e7393e6b1f882c3fd46bc8316e69ee2629d80eac65d",
+        "final_image": "origin_image/slide_29.png",
+        "final_image_sha256": "4238c077fd587ce1d3473e7393e6b1f882c3fd46bc8316e69ee2629d80eac65d",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:54Z"
+      },
+      "blocker": null
+    },
+    {
+      "slide_id": "slide_30",
+      "number": 30,
+      "title": "離堂任務與延伸閱讀：用三句話定義光遺傳學",
+      "job": "prompts/slide_30.json",
+      "out": "origin_image/slide_30.png",
+      "input_images": [],
+      "style_reference_images": [],
+      "requires_context_images": false,
+      "expected_generation_mode": "generate",
+      "status": "recorded",
+      "dispatch": {
+        "agent_id": "worker-30",
+        "agent_nickname": "Slide 30 Worker",
+        "prompt": "prompts/slide_30.json",
+        "prompt_sha256": "3303a774d67073de22378e1dfd31e1d548621655903dc8f465f41e5fe39c7cea",
+        "dispatched_at": "2026-10-09T10:20:54Z"
+      },
+      "result": {
+        "agent_id": "worker-30",
+        "backend_used": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "selected_source": "/Users/froglssh/Library/CloudStorage/GoogleDrive-frog@lssh.tp.edu.tw/我的雲端硬碟/04教科書/0自編教材/翰林新教案/諾貝爾生醫獎/2026諾貝爾生醫獎_光遺傳學/教學簡報/光遺傳學_教師版教學簡報_codex-ppt/drafts/slide_30_candidate.png",
+        "selected_source_sha256": "930c58d2717c44d52b7e499a9426c79a47641abc4d6d7b15ff50daabec614b6e",
+        "final_image": "origin_image/slide_30.png",
+        "final_image_sha256": "930c58d2717c44d52b7e499a9426c79a47641abc4d6d7b15ff50daabec614b6e",
+        "expected_backend": "scripts/image_gen.py --backend auto (codex-oauth)",
+        "expected_backend_labels": [
+          "scripts/image_gen.py --backend auto (codex-oauth)",
+          "scripts/image_gen.py"
+        ],
+        "sample_generation_method_matched": true,
+        "qa_note": "Traditional Chinese text sharp; layout matches style A approved sample slide 10.",
+        "recorded_at": "2026-10-09T10:20:54Z"
+      },
+      "blocker": null
+    }
+  ],
+  "updated_at": "2026-10-09T10:20:54Z"
+}
